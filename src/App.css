@@ -1,5 +1,15 @@
 .App {
-  text-align: center;
+  text-align: left;
+}
+
+.Menu-bar {
+  background-color: #f5c6e9;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+  padding-left: 50px;
 }
 
 .App-logo {
