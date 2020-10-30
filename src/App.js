@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Visualization from './components/visualization';
+import Visualization from './components/visualization';
 import VisualizationCard from './components/visualizationcard';
-// import { Grid, Cell } from 'react-mdl';
+import Voronoi from './components/voronoi';
+import AreaBump from './components/areabump';
+import StreamGraph from './components/streamgraph';
 
 import './App.css';
 import './css/bootstrap.css'
@@ -15,10 +17,7 @@ import './css/themify-icons.css'
 // import './vendors/nice-select/css/nice-select.css'
 import './css/style.css'
 import './css/font-awesome.min.css'
-
-import headshot from './assets/images/headshot.JPG'
-import circle_shot from './assets/images/circle_headshot.png'
-import voronoi from './assets/images/tv_corr.PNG'
+import {Grid} from '@material-ui/core';
 
 class App extends Component {
     render() {
@@ -69,7 +68,7 @@ class App extends Component {
                                 <div class="col-lg-4">
                                     <div class="home_right_img">
                                         <img class="img-fluid"
-                                             src={circle_shot}
+                                             src={'/images/circle_headshot.png'}
                                              alt=""/>
                                     </div>
                                 </div>
@@ -86,7 +85,7 @@ class App extends Component {
                             <div class="col-lg-5">
                                 <div class="home_right_img">
                                     <img class="img-fluid"
-                                        src={headshot}
+                                        src={'/images/headshot.JPG'}
                                         alt="avatar"
                                     />
                                 </div>
@@ -127,41 +126,69 @@ class App extends Component {
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                {/*<VisualizationCard*/}
-                                {/*    title="Voronoi Diagram"*/}
-                                {/*    id="voronoi-div"*/}
-                                {/*    img={voronoi}*/}
-                                {/*    // link="voronoi.js"*/}
-                                {/*    shortDescription="Exploring a tv show recommendation engine using a Voronoi diagram."*/}
-                                {/*/>*/}
-                            </div>
-
-
-
-
-                            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                <div class="service_item">
-                                    <h4>Web Dashboard and Server </h4>
-                                    <p>Developed web application to display live race and car information with NodeJS
-                                        and web sockets, as well as a 'historical' dashboard for post-race analysis.
-                                        Deployed API endpoints, cloud server and PostgreSQL database to store data. </p>
-                                    <a href="https://github.com/hweelin-yeo/Web-Dashboard-Server" class="primary_btn mt-35">Learn More</a>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                <div class="service_item">
-                                    <h4>Whack A Mole Embedded Systems</h4>
-                                    <p>Developed a hardware game, equipped with a SNES controller and an LED board,
-                                        where users can “whack” moles. Moles appear on the LED boards randomly
-                                        and players have to hit the moles with a green LED pointer.</p>
-                                    <a href="https://github.com/hweelin-yeo/Whack-A-Mole" class="primary_btn mt-35">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
+                        <Grid container class="row" alignItems={'stretch'}>
+                            <Grid item class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                <VisualizationCard
+                                    title="Voronoi Diagram"
+                                    id="voronoi-div"
+                                    img='/images/tv_corr.PNG'
+                                    link="voronoi.js"
+                                    shortDescription="Exploring a tv show recommendation engine using a Voronoi diagram."
+                                />
+                            </Grid>
+                            <Grid item className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                <VisualizationCard
+                                    title="Ordered Stream Graph"
+                                    id="stream-div"
+                                    img='/images/stream.png'
+                                    link="streamgraph.js"
+                                    shortDescription="Tracking global outstanding COVID cases with an area stream graph."
+                                />
+                            </Grid>
+                            <Grid item className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                <VisualizationCard
+                                    title="Area Bump Chart"
+                                    id="bump-div"
+                                    img='/images/bump.png'
+                                    link="areabump.js"
+                                    shortDescription="Tracking total global outstanding COVID cases as percent of world total."
+                                />
+                            </Grid>
+                        </Grid>
                         <br></br><p> And more in progress! </p>
+                    </div>
+                </section>
+
+                <section id="projects" className="services_area section_gap">
+                    <div className="container">
+                        <div className="row">
+                            <Visualization
+                                title="Voronoi Tesselation"
+                                tip="Click on chart to toggle between showing genres and film correlations as voronoi underlay, hover to see film information"
+                                id="voronoi-div"
+                                visualizationComponent=<Voronoi size={[500,500]}/>
+                                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            />
+                        </div>
+                        <div className="row">
+                            <Visualization
+                                title="Ordered Stream Graph"
+                                // tip="Toggle between logarithmic and linear y-axis scales, hover over the graph for country and date specific information"
+                                id="stream-div"
+                                visualizationComponent=<StreamGraph size={[500,500]}/>
+                                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            />
+                        </div>
+                        <div className="row">
+                            <Visualization
+                                style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
+                                title="Area Bump Chart"
+                                // tip="TEMP"
+                                id="bump-div"
+                                visualizationComponent=<AreaBump size={[800,500]}/>
+                                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            />
+                        </div>
                     </div>
                 </section>
                 {/*// ================ End Features Area =================*/}

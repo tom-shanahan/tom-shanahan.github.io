@@ -38,7 +38,7 @@ class Voronoi extends Component {
 
     that.state.genreColor = loadedData.map(d => d.color);
     // that.state.pts = loadedData.map(d => [d.pt.x*height,d.pt.y*height]);
-    that.state.pts = loadedData.map(d => [d.tsneCoordinatesNormalized[0]*height,d.tsneCoordinatesNormalized[1]*height]);
+    that.state.pts = loadedData.map(d => [d.tsneCoordinatesNormalized[0]*height,d.tsneCoordinatesNormalized[1]*width]);
     const xv = extent(that.state.pts.map(d => d[0]));
     const yv = extent(that.state.pts.map(d => d[1]));
     console.log(xv);

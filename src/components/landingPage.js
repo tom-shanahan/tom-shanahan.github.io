@@ -25,7 +25,7 @@ class LandingPage extends Component {
                                 <VisualizationCard
                                     title="Voronoi Diagram"
                                     id="voronoi-div"
-                                    img={require('../assets/images/tv_corr.PNG')}
+                                    img={require('../../public/images/tv_corr.PNG')}
                                     link="voronoi.js"
                                     shortDescription="Exploring a tv show recommendation engine using a Voronoi diagram."
                                 />
@@ -35,7 +35,7 @@ class LandingPage extends Component {
                                     title="Ordered Stream Graph"
                                     id="stream-div"
                                     link="streamgraph.js"
-                                    img={require('../assets/images/stream.png')}
+                                    img={require('../../public/images/stream.png')}
                                     shortDescription="Tracking global outstanding COVID cases with an area stream graph."
                                 />
                             </Cell>
@@ -43,7 +43,7 @@ class LandingPage extends Component {
                                 <VisualizationCard
                                     title="Area Bump Chart"
                                     id="bump-div"
-                                    img={require('../assets/images/bump.png')}
+                                    img={require('../../public/images/bump.png')}
                                     link="areabump.js"
                                     shortDescription="Tracking total global outstanding COVID cases as percent of world total."
                                 />
