@@ -85,7 +85,7 @@ class App extends Component {
                             <div class="col-lg-5">
                                 <div class="home_right_img">
                                     <img class="img-fluid"
-                                        src={'/images/headshot.JPG'}
+                                        src={'/images/other_photo.JPG'}
                                         alt="avatar"
                                     />
                                 </div>
