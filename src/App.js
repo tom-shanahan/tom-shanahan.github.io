@@ -18,6 +18,28 @@ import './css/themify-icons.css'
 import './css/style.css'
 import './css/font-awesome.min.css'
 import {Grid} from '@material-ui/core';
+import "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/react-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+// import {'fa-chevron-up'} from '@fortawesome/fontawesome-svg-core';
+// import {faChevronUp as 'fa-chevron-up'} from "@fortawesome/free-solid-svg-icons/faChevronUp";
+//
+// import {library, dom} from "@fortawesome/fontawesome-svg-core";
+
+// import {faChevronDown as faChevronDown_fal_pro} from "@fortawesome/free-solid-svg-icons/faChevronDown";
+// import {faChevronUp as faChevronUp_fal_pro} from "@fortawesome/free-solid-svg-icons/faChevronUp";
+// library.add(faChevronDown_fal_pro, faChevronUp_fal_pro);
+
+// import '@fortawesome/fontawesome-free/js/fontawesome'
+// import '@fortawesome/fontawesome-free/js/solid'
+// import '@fortawesome/fontawesome-free/js/regular'
+// import '@fortawesome/fontawesome-free/js/brands'
+//
+
+// import 'font-awesome/css/font-awesome.min.css';
+// import './vendor/fontawesome.js';
+
 
 class App extends Component {
     render() {
@@ -37,7 +59,7 @@ class App extends Component {
                                     <ul class="nav navbar-nav menu_nav">
                                         <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#project-header">Projects</a></li>
                                         <li class="nav-item"><a class="nav-link" href="../../html/travels.html">Travels</a></li>
                                     </ul>
                                 </div>
@@ -61,7 +83,7 @@ class App extends Component {
                                             <a href="https://www.linkedin.com/in/tshanahan1/"><i class="ti-linkedin"></i></a>
                                             <a href="https://github.com/tom-shanahan"><i class="ti-github"></i></a>
                                         </div>
-                                        <a class="primary_btn2" href="#projects"><span>Check Out My Work</span></a>
+                                        <a class="primary_btn2" href="#project-header"><span>Check Out My Work</span></a>
                                         <a class="primary_btn2 ml-30" href="https://drive.google.com/file/d/17fyHKjfr3zuP1BY33Lg3P2mpnJqSOxAw/view?usp=sharing"><span>See My Resume</span></a>
                                     </div>
                                 </div>
@@ -115,7 +137,7 @@ class App extends Component {
                 {/*// ================ End About Us Area =================*/}
 
                 {/*// ================ Start Features Area =================*/}
-                <section id="projects" class="services_area section_gap">
+                <section id="project-header" class="services_area section_gap">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -161,7 +183,7 @@ class App extends Component {
 
                 <section id="projects" className="services_area section_gap">
                     <div className="container">
-                        <div className="row">
+                        <div className="row project-detail" >
                             <Visualization
                                 title="Voronoi Tesselation"
                                 tip="Click on chart to toggle between showing genres and film correlations as voronoi underlay, hover to see film information"
@@ -170,7 +192,7 @@ class App extends Component {
                                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                             />
                         </div>
-                        <div className="row">
+                        <div className="row project-detail">
                             <Visualization
                                 title="Ordered Stream Graph"
                                 // tip="Toggle between logarithmic and linear y-axis scales, hover over the graph for country and date specific information"
@@ -179,13 +201,13 @@ class App extends Component {
                                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                             />
                         </div>
-                        <div className="row">
+                        <div className="row project-detail">
                             <Visualization
                                 style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
                                 title="Area Bump Chart"
                                 // tip="TEMP"
                                 id="bump-div"
-                                visualizationComponent=<AreaBump size={[800,500]}/>
+                                visualizationComponent=<AreaBump size={[500,500]}/>
                                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                             />
                         </div>

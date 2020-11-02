@@ -24,7 +24,7 @@ class VisualizationCard extends Component {
     render() {
         return (
             <Card className={useStyles.root} shadow={3} style={{width: '100%', margin: 'auto'}}>
-                <CardActionArea >
+                <CardActionArea onClick={this.scrollDown}>
                     <CardMedia
                         className={useStyles.media}
                         style={{ display:'flex', justifyContent:'center', 'margin-top':'10px'}}>
@@ -44,13 +44,17 @@ class VisualizationCard extends Component {
                 </CardActionArea>
                 <CardActions>
                     <Button colored onClick={this.scrollDown} color="primary">
-                        See Project
+                        Check out Project
                     </Button>
                     <Button color="primary">
-                        See Code
+                        Code
                         <a href={`https://github.com/tom-shanahan/tom-shanahan.github.io/blob/master/src/components/${this.props.link}`}
                            target="_blank" rel="noopener noreferrer">
                         </a>
+                    </Button>
+                    <Button color="primary">
+                        Data Prep
+                        {/*    TODO: insert Colab link*/}
                     </Button>
                 </CardActions>
             </Card>
