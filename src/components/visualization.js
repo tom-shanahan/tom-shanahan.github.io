@@ -2,19 +2,12 @@ import React, { Component } from 'react';
 import {Card, Grid, IconButton, makeStyles} from '@material-ui/core';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee,faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { fas,faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab,faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons'
 
-library.add(fab, faCheckSquare, faCoffee,faChevronUp)
-
-// import '@fortawesome/fontawesome-free/js/fontawesome'
-// import '@fortawesome/fontawesome-free/js/solid'
-// import '@fortawesome/fontawesome-free/js/regular'
-// import '@fortawesome/fontawesome-free/js/brands'
-//
-// import '../vendor/fontawesome.js'
+library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp)
 
 const useStyles = makeStyles({
     root: {
@@ -35,7 +28,7 @@ class Visualization extends Component {
     }
     render() {
         return(
-            <Card className={useStyles.root} shadow={3} style={{width: '100%', margin: 'auto'}}>
+            <Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}}>
                 <Grid container id={this.props.id} spacing={0}>
                     <Grid item xs>
                         {this.props.visualizationComponent}
@@ -45,8 +38,6 @@ class Visualization extends Component {
                             <button id="to-top"
                                     className="mdc-icon-button keyboard_arrow_up"
                                     onClick={this.scrollUp}>
-                                {/*<i className="fa-chevron-up"></i>*/}
-                                {/*<i className="fachevronup"></i>*/}
                                 <FontAwesomeIcon icon={faChevronUp} />
                             </button>
                         </h2>

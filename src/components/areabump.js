@@ -14,13 +14,14 @@ import loadedData from '../assets/data/area_bump.json'
 
 class AreaBump extends Component {
   constructor(props){
-      super(props)
+      super(props);
       this.createAreaBump = this.createAreaBump.bind(this);
       this.onMouseMove = this.onMouseMove.bind(this);
       this.drawData = this.drawData.bind(this);
       this.updateBumpTooltip = this.updateBumpTooltip.bind(this);
       this.toggleType = this.toggleType.bind(this);
-      this.toggleLocation = this.toggleLocation.bind(this)
+      this.toggleLocation = this.toggleLocation.bind(this);
+      // this.toggleTitle = this.toggleTitle.bind(this);
       this.state = {
         'svg':null
         ,'margin':null
@@ -43,8 +44,6 @@ class AreaBump extends Component {
     const node = this.node;
     const that = this.state;
     that.colors = {
-      // ["US","India","Brazil","Russia","Argentina","China","Italy","France","Germany","Spain","Korea, South","Iran","Switzerland","United Kingdom","Austria","Netherlands","Belgium"]
-
     "Korea, South":"darkred"
     ,"China":"pink"
     ,"US":"blue"
@@ -62,7 +61,7 @@ class AreaBump extends Component {
     ,"India":"orange"
     };
 
-    that.margin = {top: 20, right: 60, bottom: 40, left: 30};
+    that.margin = {top: 10, right: 75, bottom: 30, left: 20};
     const width = 750 - that.margin.left - that.margin.right;
     const height = 500 - that.margin.top - that.margin.bottom;
 
@@ -75,7 +74,6 @@ class AreaBump extends Component {
 
     // axis
     that.x = scaleTime()
-      // TODO: change this to each dataset
       .domain(extent(loadedData['confirmed_global'], d => timeParse("%m/%d/%y")(d[0].date)))
       .range([0, width])
       .clamp(true);
@@ -118,14 +116,9 @@ class AreaBump extends Component {
 
     that.svg.append("text")
       .attr("text-anchor", "middle")
-      .attr("transform", "translate("+ (width + that.margin.right*0.8) +","+(height/2)+")rotate(90)")
+      .attr("transform", "translate("+ (width + that.margin.right*0.8) +","+(height/2)+")rotate(270)")
       // TODO: change axis title using HTML, d3.select('.legend').html('<div class="block"></div><div>0 - 10</div>')
       .text("% of Total");
-
-    that.svg.append("text")
-      .attr("text-anchor", "middle")
-      .attr("transform", "translate(" + (width/2) + "," + (height + 40) + ")")
-      .text("Date");
 
     that.bumpArea = area()
       .curve(curveBasis)
@@ -142,17 +135,31 @@ class AreaBump extends Component {
 
   toggleType() {
     this.setState((prevState) => {
-      return {showCases:!prevState .showCases}
+      return {showCases:!prevState.showCases}
     });
   }
 
+  // toggleTitle() {
+  //   var curTitle = document.getElementById('chart-title');
+  //   console.log(curTitle.value);
+  //   if (curTitle != null && curTitle.value == "Deaths"){
+  //     document.getElementById('chart-title').textContent = "Cases";
+  //     return
+  //   }
+  //   else if (curTitle != null && curTitle.value == "Cases") {
+  //     document.getElementById('chart-title').textContent = "Deaths";
+  //     return
+  //   }
+  // }
+
   toggleLocation() {
-    this.setState((prevState ) => {
+    this.setState((prevState) => {
       return {showGlobal:!prevState.showGlobal}
     });
   }
 
   drawData() {
+    this.toggleType();
     const that = this;
     const layers = prepareData(loadedData,this.state.showCases,this.state.showGlobal);
     var countries = this.state.svg.selectAll(`.areaBumpLayers`)
@@ -207,20 +214,8 @@ class AreaBump extends Component {
       for(var i = 0; i < total_days; i++){
         var sum = 0;
         var padding = 0;
-        // var currentLength = data[i].length;
         var place = data[i].length;
         while(place--){
-          // var pctRecovered = Math.min(data[i][currentLength-1]["pct"] + data[i][currentLength-2]["pct"],0.99);
-          // var filter = data[i][lid]["location"] !== 'Deaths' && data[i][lid]["location"] !== 'Recoveries';
-          // // on if actual location or show recovered
-          // if(filter || that.state.showCases){
-          //   data[i][lid]["formattedDate"] = timeParse("%m/%d/%y")(data[i][lid]["date"]);
-          //   data[i][lid]["adjustedPct"] = data[i][lid]["pct"]/(1-pctRecovered);
-          //   data[i][lid]["y0"] = sum;
-          //   data[i][lid]["y"] = data[i][lid]["adjustedPct"];
-          //   flat.push(data[i][lid]);
-          //   sum += data[i][lid]["adjustedPct"] + padding;
-          // }
           data[i][place]["formattedDate"] = timeParse("%m/%d/%y")(data[i][place]["date"]);
           data[i][place]["y0"] = sum;
           data[i][place]["y"] = data[i][place]["pct"];
@@ -272,7 +267,7 @@ class AreaBump extends Component {
     var n = d.key;
 
     const tooltip = this.state.svg.selectAll(".bump-tooltip")
-      .data([n,day,`est. cases: ${current}`,`percent: ${pct}`]);
+      .data([n,`date: ${day}`,`count: ${current}`,`% of daily global: ${pct}`]);
     tooltip.style("visibility", "visible")
       .text(d => d);
     tooltip.enter()
@@ -299,30 +294,52 @@ class AreaBump extends Component {
   }
 
   render() {
+    if (this.state.showCases) {
+      return (
+          <div className= 'viz-container'>
+            <p className='viz-title' id='chart-title'>Daily New Covid-19 Deaths by Country</p>
+            <svg
+                onMouseMove={this.onMouseMove}
+                ref={node => this.node = node}
+                width={this.props.size[0]}
+                height={this.props.size[1]}>
+            </svg>
+            <div className='button-container'>
+              <button
+                  className='chart-toggle'
+                  onClick={() => {
+                    // this.toggleType();
+                    // this.toggleTitle();
+                    this.drawData();
+                  }}>
+                View Case Data
+              </button>
+            </div>
+          </div>
+      );
+    }
     return (
-      <div>
+      <div className= 'viz-container'>
+        <p className='viz-title' id='chart-title'>Daily New Covid-19 Cases by Country</p>
         <svg
           onMouseMove={this.onMouseMove}
           ref={node => this.node = node}
           width={this.props.size[0]}
           height={this.props.size[1]}>
         </svg>
-        <button
-            onClick={() => {
-              this.toggleType();
-              this.drawData();
-            }}>
-          Toggle Cases/Deaths
-        </button>
-        {/*<button*/}
-        {/*    onClick={() => {*/}
-        {/*      this.toggleLocation();*/}
-        {/*      this.drawData();*/}
-        {/*    }}>*/}
-        {/*  Toggle Global/US*/}
-        {/*</button>*/}
+        <div className='button-container'>
+          <button
+              className='chart-toggle'
+              onClick={() => {
+                // this.toggleType();
+                // this.toggleTitle();
+                this.drawData();
+              }}>
+            View Fatality Data
+          </button>
+        </div>
       </div>
-    )
+    );
   }
 }
 

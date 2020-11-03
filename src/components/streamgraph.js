@@ -119,16 +119,6 @@ class StreamGraph extends Component {
             .attr('x', 0)
             .attr('y', 0);
 
-        that.svg.append('text')
-            .attr('text-anchor', 'middle')
-            .attr('transform', `translate(${width + margin.right*0.6},${height/2})rotate(90)`)
-            .text('Current Outstanding Cases');
-
-        that.svg.append('text')
-            .attr('text-anchor', 'middle')
-            .attr('transform', `translate(${width/2},${height + 40})`)
-            .text('Date');
-
         // Draw the data
         that.streamArea = area()
             .curve(curveCardinal)
@@ -305,9 +295,17 @@ class StreamGraph extends Component {
             .attr('height',15)
             .attr('fill', 'url(#legend-grad)');
         legend.append('text')
-            .attr('text-anchor', 'end')
-            .attr('transform', 'translate('+ -10 +','+10+')')
-            .text('Case Fatality Rate (CFR)');
+            // .attr('text-anchor', 'top middle')
+            // .attr('transform', 'translate('+ -10 +','+10+')')
+            // .attr('margin-top','44px')
+            // .attr('display','flex')
+            // .attr('justify-content','center')
+            .attr('font-size','20px')
+            // .attr("alignment-baseline","middle")
+            // .attr("text-anchor", "left")
+            // .attr('data-style-padding','55px')
+            .style('text-anchor', 'right')
+            .text('Case Fatality Rate');
 
         var lScale = scaleLinear()
             .range([0, 300])
@@ -370,7 +368,13 @@ class StreamGraph extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.drawScale}> Toggle Y-Axis Scale</button>
+                <div style={{'alignContent':'top right','margin':'5px'}}>
+                    <button
+                        // className='axis-toggle'
+                        onClick={this.drawScale}>
+                        Toggle Y-Axis Scale
+                    </button>
+                </div>
                 <svg
                     onMouseMove={this.onMouseMove}
                     ref={node => this.node = node}

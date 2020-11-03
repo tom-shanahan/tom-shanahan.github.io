@@ -5,14 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
-// import { fachevronup } from '@fortawesome/fontawesome-free/js/solid'
-
-// import 'font-awesome/css/font-awesome.min.css';
-// import './vendor/fontawesome.js';
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

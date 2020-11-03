@@ -32,12 +32,11 @@ class Voronoi extends Component {
     const that = this;
     const node = this.node;
 
-    const margin = {top: 40, right: 25, bottom: 25, left: 25};
+    const margin = {top: 75, right: 75, bottom: 75, left: 75};
     const width = this.props.size[0] - margin.left - margin.right;
     const height = this.props.size[1] - margin.top - margin.bottom;
 
     that.state.genreColor = loadedData.map(d => d.color);
-    // that.state.pts = loadedData.map(d => [d.pt.x*height,d.pt.y*height]);
     that.state.pts = loadedData.map(d => [d.tsneCoordinatesNormalized[0]*height,d.tsneCoordinatesNormalized[1]*width]);
     const xv = extent(that.state.pts.map(d => d[0]));
     const yv = extent(that.state.pts.map(d => d[1]));
@@ -110,12 +109,12 @@ class Voronoi extends Component {
   updateTooltip(d){
     var tooltip = this.state.svg.selectAll(".voronoi-tooltip")
         .data([`${d.label}`,`${d.genres}`]);
-    tooltip.style("visibility", "visible")
+    tooltip.style("visibility", "hidden")
         .attr("opacity",1)
         .text(d => d);
     tooltip.enter()
         .append("text")
-        .attr("class", "voronoi-tooltip tooltip")
+        // .attr("class", "voronoi-tooltip tooltip")
         .attr("x","0")
         .attr("y",(d,i) => `${i-2}em`)
         .attr("opacity",1)

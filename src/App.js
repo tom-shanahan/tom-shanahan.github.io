@@ -18,28 +18,14 @@ import './css/themify-icons.css'
 import './css/style.css'
 import './css/font-awesome.min.css'
 import {Grid} from '@material-ui/core';
-import "@fortawesome/free-solid-svg-icons";
-import "@fortawesome/react-fontawesome";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-// import {'fa-chevron-up'} from '@fortawesome/fontawesome-svg-core';
-// import {faChevronUp as 'fa-chevron-up'} from "@fortawesome/free-solid-svg-icons/faChevronUp";
-//
-// import {library, dom} from "@fortawesome/fontawesome-svg-core";
 
-// import {faChevronDown as faChevronDown_fal_pro} from "@fortawesome/free-solid-svg-icons/faChevronDown";
-// import {faChevronUp as faChevronUp_fal_pro} from "@fortawesome/free-solid-svg-icons/faChevronUp";
-// library.add(faChevronDown_fal_pro, faChevronUp_fal_pro);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { fas,faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab,faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons'
 
-// import '@fortawesome/fontawesome-free/js/fontawesome'
-// import '@fortawesome/fontawesome-free/js/solid'
-// import '@fortawesome/fontawesome-free/js/regular'
-// import '@fortawesome/fontawesome-free/js/brands'
-//
-
-// import 'font-awesome/css/font-awesome.min.css';
-// import './vendor/fontawesome.js';
-
+library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp)
 
 class App extends Component {
     render() {
@@ -237,8 +223,8 @@ class App extends Component {
                                         </div>
                                     </div>
                                     <div class="footer_social mt-lg-0 mt-4">
-                                        <a href="https://www.linkedin.com/in/tshanahan1/"><i class="fab fa-linkedin"></i></a>
-                                        <a href="https://github.com/tom-shanahan"><i class="fab fa-github"></i></a>
+                                        <a href="https://www.linkedin.com/in/tshanahan1/"><FontAwesomeIcon icon={faLinkedin}/></a>
+                                        <a href="https://github.com/tom-shanahan"><FontAwesomeIcon icon={faGithub} /></a>
                                     </div>
                                 </div>
                             </div>
