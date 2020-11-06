@@ -17,7 +17,7 @@ import './css/themify-icons.css'
 // import './vendors/nice-select/css/nice-select.css'
 import './css/style.css'
 import './css/font-awesome.min.css'
-import {Grid} from '@material-ui/core';
+import {Button, Grid} from '@material-ui/core';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
@@ -149,6 +149,7 @@ class App extends Component {
                                     id="voronoi-div"
                                     img='/images/tv_corr.PNG'
                                     link="voronoi.js"
+                                    data="https://colab.research.google.com/drive/1JNnXVkwvR1CrOsiIdwod2ZwVKtGYaWqt?usp=sharing"
                                     shortDescription="Exploring a television recommendation engine using a dynamic Voronoi diagram. Facilitates the understanding of complex multi-dimensional data."
                                 />
                             </Grid>
@@ -158,6 +159,7 @@ class App extends Component {
                                     id="stream-div"
                                     img='/images/stream.png'
                                     link="streamgraph.js"
+                                    data="https://colab.research.google.com/drive/1lRCAhOrRBCW8YIJZ4jkjv4A4K1JK5m2s?usp=sharing"
                                     shortDescription="Tracking country-level COVID-19 cases and fatality rate over time. Toggleable axis improves useability."
                                 />
                             </Grid>
@@ -167,6 +169,7 @@ class App extends Component {
                                     id="bump-div"
                                     img='/images/bump.png'
                                     link="areabump.js"
+                                    data='https://colab.research.google.com/drive/1BYTmrtlquchTl7eTeBpWeYPnctlUDsjg?usp=sharing'
                                     shortDescription="Tracking global share of COVID-19 cases and fatalities by country. Toggle allows easy switching between datasets."
                                 />
                             </Grid>

@@ -30,8 +30,7 @@ class Visualization extends Component {
         return(
             <Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}}>
                 <div style={{'buffer-top':'50px'}}>
-                    <button id="to-top"
-                            className="mdc-icon-button keyboard_arrow_up card-button"
+                    <button className="mdc-icon-button keyboard_arrow_up card-button"
                             onClick={this.scrollUp}>
                         <FontAwesomeIcon icon={faChevronUp}/>
                     </button>

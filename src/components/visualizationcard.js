@@ -56,10 +56,11 @@ class VisualizationCard extends Component {
                             </Button>
                         </Grid>
                         <Grid item>
-                            <Button class="card-button">
-                                Data
-                                {/*    TODO: insert Colab link*/}
-                            </Button>
+                            <form target='_blank' action={`${this.props.data}`}>
+                                <Button class="card-button" type='submit'>
+                                    Data
+                                </Button>
+                            </form>
                         </Grid>
                     </Grid>
                 </CardActions>
