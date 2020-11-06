@@ -114,12 +114,6 @@ class AreaBump extends Component {
       .attr("x",0)
       .attr("y",0);
 
-    that.svg.append("text")
-      .attr("text-anchor", "middle")
-      .attr("transform", "translate("+ (width + that.margin.right*0.8) +","+(height/2)+")rotate(270)")
-      // TODO: change axis title using HTML, d3.select('.legend').html('<div class="block"></div><div>0 - 10</div>')
-      .text("% of Total");
-
     that.bumpArea = area()
       .curve(curveBasis)
       .x(d => that.x(d.formattedDate))
@@ -297,7 +291,7 @@ class AreaBump extends Component {
     if (this.state.showCases) {
       return (
           <div className= 'viz-container'>
-            <p className='viz-title' id='chart-title'>Daily New Covid-19 Deaths by Country</p>
+            <p className='viz-title' id='chart-title'>Share of Global COVID-19 Deaths by Country</p>
             <svg
                 onMouseMove={this.onMouseMove}
                 ref={node => this.node = node}
@@ -306,7 +300,7 @@ class AreaBump extends Component {
             </svg>
             <div className='button-container'>
               <button
-                  className='chart-toggle'
+                  className='card-button chart-toggle'
                   onClick={() => {
                     // this.toggleType();
                     // this.toggleTitle();
@@ -320,16 +314,16 @@ class AreaBump extends Component {
     }
     return (
       <div className= 'viz-container'>
-        <p className='viz-title' id='chart-title'>Daily New Covid-19 Cases by Country</p>
+        <p className='viz-title' id='chart-title'>Share of Global COVID-19 Cases by Country</p>
         <svg
           onMouseMove={this.onMouseMove}
           ref={node => this.node = node}
           width={this.props.size[0]}
           height={this.props.size[1]}>
         </svg>
-        <div className='button-container'>
+        <div class='button-container'>
           <button
-              className='chart-toggle'
+              class='card-button chart-toggle'
               onClick={() => {
                 // this.toggleType();
                 // this.toggleTitle();

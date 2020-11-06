@@ -69,14 +69,15 @@ class App extends Component {
                                             <a href="https://www.linkedin.com/in/tshanahan1/"><i class="ti-linkedin"></i></a>
                                             <a href="https://github.com/tom-shanahan"><i class="ti-github"></i></a>
                                         </div>
-                                        <a class="primary_btn2" href="#project-header"><span>Check Out My Work</span></a>
-                                        <a class="primary_btn2 ml-30" href="https://drive.google.com/file/d/17fyHKjfr3zuP1BY33Lg3P2mpnJqSOxAw/view?usp=sharing"><span>See My Resume</span></a>
+                                        <a class="link-button" href="#projects"><span>See My Work</span></a>
+                                        <a class="link-button" href="https://drive.google.com/file/d/17fyHKjfr3zuP1BY33Lg3P2mpnJqSOxAw/view?usp=sharing"><span>See My Resume</span></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="home_right_img">
-                                        <img class="img-fluid"
+                                        <img class="img-fluid headshot-img"
                                              src={'/images/circle_headshot.png'}
+                                             style={{ 'border-radius':'100%' }}
                                              alt=""/>
                                     </div>
                                 </div>
@@ -87,12 +88,13 @@ class App extends Component {
                 {/*// ================ End Home Banner Area =================*/}
 
                 {/*// ================ Start About Us Area =================*/}
-                <section id="about" class="about_area section_gap">
+                <section class="about_area section_gap">
+                    <span id="about" className="anchor"></span>
                     <div class="container">
-                        <div class="row justify-content-start align-items-center">
+                        <div  class="row justify-content-start align-items-center">
                             <div class="col-lg-5">
                                 <div class="home_right_img">
-                                    <img class="img-fluid"
+                                    <img class="img-fluid headshot-img"
                                         src={'/images/other_photo.JPG'}
                                         alt="avatar"
                                     />
@@ -123,7 +125,8 @@ class App extends Component {
                 {/*// ================ End About Us Area =================*/}
 
                 {/*// ================ Start Features Area =================*/}
-                <section id="project-header" class="services_area section_gap">
+                <section class="services_area section_gap">
+                    <span id="project-header" className="anchor" ></span>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -134,32 +137,37 @@ class App extends Component {
                             </div>
                         </div>
 
-                        <Grid container class="row" alignItems={'stretch'}>
-                            <Grid item class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <Grid
+                            container
+                            direction="row"
+                            justify="center"
+                            alignItems="stretch"
+                        >
+                            <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                 <VisualizationCard
                                     title="Voronoi Diagram"
                                     id="voronoi-div"
                                     img='/images/tv_corr.PNG'
                                     link="voronoi.js"
-                                    shortDescription="Exploring a tv show recommendation engine using a Voronoi diagram."
+                                    shortDescription="Exploring a television recommendation engine using a dynamic Voronoi diagram. Facilitates the understanding of complex multi-dimensional data."
                                 />
                             </Grid>
-                            <Grid item className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                 <VisualizationCard
-                                    title="Ordered Stream Graph"
+                                    title="Stream Graph"
                                     id="stream-div"
                                     img='/images/stream.png'
                                     link="streamgraph.js"
-                                    shortDescription="Tracking global outstanding COVID cases with an area stream graph."
+                                    shortDescription="Tracking country-level COVID-19 cases and fatality rate over time. Toggleable axis improves useability."
                                 />
                             </Grid>
-                            <Grid item className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                 <VisualizationCard
                                     title="Area Bump Chart"
                                     id="bump-div"
                                     img='/images/bump.png'
                                     link="areabump.js"
-                                    shortDescription="Tracking total global outstanding COVID cases as percent of world total."
+                                    shortDescription="Tracking global share of COVID-19 cases and fatalities by country. Toggle allows easy switching between datasets."
                                 />
                             </Grid>
                         </Grid>
@@ -169,33 +177,59 @@ class App extends Component {
 
                 <section id="projects" className="services_area section_gap">
                     <div className="container">
-                        <div className="row project-detail" >
+                        <div id="voronoi-div" className="row project-detail" >
                             <Visualization
-                                title="Voronoi Tesselation"
-                                tip="Click on chart to toggle between showing genres and film correlations as voronoi underlay, hover to see film information"
-                                id="voronoi-div"
+                                title="Voronoi Diagram"
                                 visualizationComponent=<Voronoi size={[500,500]}/>
-                                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                            />
+                                description=
+                            "This graphic is part of a project I did on the preferences of television viewers. Utilizing over five
+                            million viewer data points, I developed two recommendation engines: one based on viewer similarity;
+                            the other based on show similarity. While performing this analysis, I wanted to create a visualization
+                            to clearly convey the relationships in the high dimensional show-show correlation matrix. I used
+                            dimensionality reduction to translate the n-dimensional correlation matrix into a 2D representation.
+                            To achieve this I used <a href='https://colah.github.io/posts/2014-10-Visualizing-MNIST/' target='_blank' rel='noopener noreferrer'>
+                            t-SNE </a>.
+                            <br><br>
+                            In the visualization, television shows are represented as dots, and their proximities
+                            indicate similarity of user preference. However dimensionality reduction is imperfect and results in information loss.
+                            The coloration is a Voronoi diagram which shows the correlations between shows. Shows which are greener have more
+                            similar user preference. Interestingly, this coloration allows us to see where dimensionality reduction has maintained
+                            relative relations and where it has disrupted these.
+                            <br><br>
+                            <strong><i>Click on chart</i> to toggle between genres and correlations. <i>Hover</i> to see show title and genre.</strong>"
+                                />
                         </div>
-                        <div className="row project-detail">
+                        <div id="stream-div" className="row project-detail">
                             <Visualization
+                                // TODO: Update recovered data
                                 title="Ordered Stream Graph"
-                                // tip="Toggle between logarithmic and linear y-axis scales, hover over the graph for country and date specific information"
-                                id="stream-div"
+                                tip="Toggle between logarithmic and linear y-axis scales, hover over the graph for country and date specific information"
                                 visualizationComponent=<StreamGraph size={[500,500]}/>
-                                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                            />
+                                description=
+                            "When first confronted with the COVID-19 outbreak, one of my first reactions was to seek out and
+                            dig into data about the pandemic. Much of this early data was confused and contradictory. However,
+                            gradually a clearly picture emerged of the scale and scope of COVID-19.
+                            <br><br>
+                            The accompanying visualization shows the path of COVID-19. The chart plots current cases
+                            (confirmed but not recovered or deceased) by country. The coloration of each country band
+                            represents the case fatality rate (CFR). Early in the pandemic testing of rare and often only
+                            serious cases were tested, resulting in an elevated CFR. As testing became more
+                            prevalent, the CFR declined."
+                                />
                         </div>
-                        <div className="row project-detail">
+                        <div id="bump-div" className="row project-detail">
                             <Visualization
                                 style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
                                 title="Area Bump Chart"
-                                // tip="TEMP"
-                                id="bump-div"
                                 visualizationComponent=<AreaBump size={[500,500]}/>
-                                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                            />
+                                description=
+                            "This visualization shows the changing geographic patterns of the COVID-19 pandemic. It
+                            plots cumulative cases and fatalities as a share of the global total. The top ten countries
+                            are broken out, with the remainder aggregated into the 'All Other' category. The stacking
+                            of countries shows their relative counts, with the larger appearing on top.
+                            <br><br>
+                            <strong><i>Use buttons</i> below plot to toggle cases and fatalities. <i>Hover</i> to see country info.</strong>"
+                                />
                         </div>
                     </div>
                 </section>

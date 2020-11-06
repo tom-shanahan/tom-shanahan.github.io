@@ -106,20 +106,27 @@ class Voronoi extends Component {
       .duration(100)
       .attr("fill", (d, i) => color[i]);
   }
+
   updateTooltip(d){
     var tooltip = this.state.svg.selectAll(".voronoi-tooltip")
         .data([`${d.label}`,`${d.genres}`]);
-    tooltip.style("visibility", "hidden")
+    tooltip.style("visibility", "visible")
         .attr("opacity",1)
         .text(d => d);
+    // this.state.svg.select("text").remove()
     tooltip.enter()
         .append("text")
         // .attr("class", "voronoi-tooltip tooltip")
+        .attr("class", "voronoi-tooltip")
         .attr("x","0")
         .attr("y",(d,i) => `${i-2}em`)
         .attr("opacity",1)
         .text(d => d);
   }
+
+  // const totalSum = data.reduce((total, dp) => +total + +dp.popularity, 0);
+  // d3.select('.tooltip .totalValue').text(totalSum);
+
   render() {
     return (
       <div>

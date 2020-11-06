@@ -29,25 +29,30 @@ class Visualization extends Component {
     render() {
         return(
             <Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}}>
-                <Grid container id={this.props.id} spacing={0}>
+                <div style={{'buffer-top':'50px'}}>
+                    <button id="to-top"
+                            className="mdc-icon-button keyboard_arrow_up card-button"
+                            onClick={this.scrollUp}>
+                        <FontAwesomeIcon icon={faChevronUp}/>
+                    </button>
+                </div>
+                <Grid container
+                      // id={this.props.id}
+                      spacing={0}
+                      direction="row"
+                      justify="center"
+                      alignItems="center"
+                >
                     <Grid item xs>
                         {this.props.visualizationComponent}
                     </Grid>
-                    <Grid item xs>
-                        <h2 className=".viz-div">{this.props.title}
-                            <button id="to-top"
-                                    className="mdc-icon-button keyboard_arrow_up"
-                                    onClick={this.scrollUp}>
-                                <FontAwesomeIcon icon={faChevronUp} />
-                            </button>
+                    <Grid item xs style={{'margin':'25px'}}>
+                        <h2
+                            className=".viz-div">{this.props.title}
                         </h2>
                         <div>
                             {/*TODO:html allows for links*/}
                             <p dangerouslySetInnerHTML={{__html: this.props.description}} />
-                        </div>
-                        <div className='tips'>
-                            <strong>Tip: </strong>
-                            {this.props.tip}
                         </div>
                     </Grid>
                 </Grid>

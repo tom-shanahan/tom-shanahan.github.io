@@ -44,20 +44,12 @@
 .keyboard_arrow_up {
   float: right;
   display: inline-block;
-  background-color: white;
   border-radius: 3px;
-  /*border: 4px double #cccccc;*/
-  /*color: #2b2b2b;*/
   text-align: center;
-  font-size: 28px;
-  /*padding: 20px;*/
-  /*width: 200px;*/
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+  font-size: 18px;
+  margin: 8px;
+  width: auto;
+  height: auto;
 }
 
 .chart-toggle {
@@ -95,6 +87,10 @@
   /*align-self: center;*/
 }
 
+.voronoi-tooltip {
+  background-color: white;
+}
+
 .viz-title {
   font-size: large;
   font-weight: bold;
@@ -105,11 +101,106 @@
 }
 
 .project-detail {
-  padding-bottom: 350px;
+  padding-bottom: 200px;
 }
 
 .viz-div {
   display: flex;
+}
+
+.project-card {
+  height: "100%"
+}
+
+.axis-toggle{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 3px;
+  width: auto !important;
+  cursor: pointer;
+  margin: auto !important;
+  font-weight: normal !important;
+}
+
+.card-button{
+  border-color: darkslateblue;
+  border-width: thin;
+  border-radius: 5px;
+  font-weight: bold;
+  display:inline-block;
+  padding:0.35em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  text-align:center;
+  transition: all 0.2s;
+  color:darkslateblue;
+  background-color:white;
+}
+
+.card-button:hover{
+  color:white;
+  background-color: darkslateblue;
+  border-width: thin;
+}
+
+/************** App.js *****************/
+.anchor{
+  display: block;
+  height: 500; /*same height as header*/
+  margin-top: -0px; /*same height as header*/
+  visibility: hidden;
+}
+
+.headshot-img{
+  border:1px solid darkslateblue;
+}
+
+.link-button{
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: darkslateblue;
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+  -webkit-transition: all 0s ease 0s;
+  -moz-transition: all 0s ease 0s;
+  -o-transition: all 0s ease 0s;
+  transition: all 0s ease 0s
+}
+
+.link-button:before {
+  background: -webkit-linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+  background: -moz-linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+  background: -o-linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+  background: linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  width: 50px;
+  height: 2px;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s
+}
+
+.link-button:hover {
+  color: sienna;
+  font-weight: 800;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/************** card formatting *****************/
+.card-style{
+  border-color: darkslateblue;
+  border-width: thin;
+  border-radius: 5px;
 }
 
 @keyframes App-logo-spin {

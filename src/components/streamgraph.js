@@ -300,12 +300,20 @@ class StreamGraph extends Component {
             // .attr('margin-top','44px')
             // .attr('display','flex')
             // .attr('justify-content','center')
-            .attr('font-size','20px')
+            .attr('font-size','16px')
+            .attr("x", 75)
+            // .attr("y", function (d, i) { return 90 + i * 14; })
             // .attr("alignment-baseline","middle")
             // .attr("text-anchor", "left")
             // .attr('data-style-padding','55px')
-            .style('text-anchor', 'right')
+            // .attr("transform", "translate(" + (width/2) + "," + (height + 40) + ")")
+            // .style('text-anchor', 'left')
+            .attr('width',300)
+            // .attr('align','center')
+            // .attr('display','flex')
+            // .attr('justify-content','center')
             .text('Case Fatality Rate');
+
 
         var lScale = scaleLinear()
             .range([0, 300])
@@ -343,7 +351,7 @@ class StreamGraph extends Component {
         var n = country.d.key;
 
         var tooltip = this.state.svg.selectAll('.stream-tooltip')
-            .data([n,day,`est. cases: ${current}`,`deaths: ${deaths}`,`recoveries: ${recoveries}`,`CFR: ${fatality_rate}`]);
+            .data([n,day,`current cases: ${current}`,`deaths: ${deaths}`,`recoveries: ${recoveries}`,`CFR: ${fatality_rate}`]);
         tooltip.style('visibility', 'visible')
             .attr('opacity',1)
             .text(d => d);
@@ -368,9 +376,9 @@ class StreamGraph extends Component {
     render() {
         return (
             <div>
-                <div style={{'alignContent':'top right','margin':'5px'}}>
+                <div style={{'display':'flex', 'alignContent': 'top center'}}>
                     <button
-                        // className='axis-toggle'
+                        className="card-button axis-toggle"
                         onClick={this.drawScale}>
                         Toggle Y-Axis Scale
                     </button>
