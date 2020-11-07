@@ -29,7 +29,7 @@ class VisualizationCard extends Component {
                 />
             </CardMedia>
 
-        if (isProject != "None") {
+        if (isProject !== "None") {
             projectButton =
                 <Button colored onClick={this.scrollDown} class="card-button">
                     <span>Project</span>
@@ -46,7 +46,7 @@ class VisualizationCard extends Component {
                     />
                 </CardMedia>
         }
-        if (isData != "None") {
+        if (isData !== "None") {
             dataButton =
                 <form target='_blank' action={`${this.props.data}`}>
                     <Button class="card-button" type='submit'>
