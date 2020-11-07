@@ -1,5 +1,5 @@
 {
-  "homepage": "http://tom-shanahan.github.io/",
+  "homepage": "http://tom-shanahan.github.io/project",
   "name": "untitled3",
   "version": "0.1.0",
   "private": true,
@@ -24,6 +24,7 @@
     "d3-time": "1.1.0",
     "d3-time-format": "2.2.3",
     "d3-transition": "1",
+    "gh-pages": "^3.1.0",
     "font-awesome": "^4.7.0",
     "react": "^17.0.1",
     "react-code-blocks": "0.0.7",
@@ -72,7 +73,6 @@
     "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.0",
-    "gh-pages": "^3.1.0",
     "node-sass": "^5.0.0",
     "postcss-loader": "^4.0.4",
     "sass-loader": "^10.0.4",
