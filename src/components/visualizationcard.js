@@ -14,18 +14,52 @@ class VisualizationCard extends Component {
     }
 
     render() {
+        const isData = this.props.data;
+        const isProject = this.props.id;
+
+        let dataButton = <div/>;
+        let projectButton = <div/>;
+        let cardLink =
+            <CardMedia
+                style={{ display:'flex', justifyContent:'center'}}>
+                <img
+                    src={this.props.img}
+                    alt={this.props.title}
+                    style={{'max-height':'200px','max-width':'325px','height':'auto','width':'auto','margin':0,'buffer':0}}
+                />
+            </CardMedia>
+
+        if (isProject != "None") {
+            projectButton =
+                <Button colored onClick={this.scrollDown} class="card-button">
+                    <span>Project</span>
+                </Button>
+
+            cardLink =
+                <CardMedia
+                    onClick={this.scrollDown}
+                    style={{ display:'flex', justifyContent:'center'}}>
+                    <img
+                        src={this.props.img}
+                        alt={this.props.title}
+                        style={{'max-height':'200px','max-width':'325px','height':'auto','width':'auto','margin':0,'buffer':0}}
+                    />
+                </CardMedia>
+        }
+        if (isData != "None") {
+            dataButton =
+                <form target='_blank' action={`${this.props.data}`}>
+                    <Button class="card-button" type='submit'>
+                        Data
+                    </Button>
+                </form>
+        }
+
+
         return (
             <Card shadow={3} style={{'max-width':'325px', margin: 'auto'}}>
-                <CardActionArea onClick={this.scrollDown}>
-                    <CardMedia
-                        style={{ display:'flex', justifyContent:'center'}}>
-                        <img
-                            src={this.props.img}
-                            alt={this.props.title}
-                            // style={{height:'200px',width:'300px'}}
-                            style={{'max-height':'200px','max-width':'325px','height':'auto','width':'auto','margin':0,'buffer':0}}
-                        />
-                    </CardMedia>
+                <CardActionArea>
+                    {cardLink}
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2" align={'center'}>
                             {this.props.title}
@@ -42,25 +76,17 @@ class VisualizationCard extends Component {
                         justify="center"
                     >
                         <Grid item>
-                            {/*<a className="primary_btn2" href="#project-header"><span>Check Out My Work</span></a>*/}
-                            <Button colored onClick={this.scrollDown} class="card-button">
-                                <span>Project</span>
-                            </Button>
+                            {projectButton}
                         </Grid>
                         <Grid item>
-                            <Button class="card-button">
-                                Code
-                                <a href={`https://github.com/tom-shanahan/tom-shanahan.github.io/blob/master/src/components/${this.props.link}`}
-                                   target="_blank" rel="noopener noreferrer">
-                                </a>
-                            </Button>
-                        </Grid>
-                        <Grid item>
-                            <form target='_blank' action={`${this.props.data}`}>
+                            <form target='_blank' action={`https://github.com/tom-shanahan/${this.props.link}`}>
                                 <Button class="card-button" type='submit'>
-                                    Data
+                                    Code
                                 </Button>
                             </form>
+                        </Grid>
+                        <Grid item>
+                            {dataButton}
                         </Grid>
                     </Grid>
                 </CardActions>

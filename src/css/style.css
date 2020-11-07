@@ -168,7 +168,7 @@ button.primary_btn {
 	margin-left: 5px;
 	width: 80px;
 	height: 4px;
-	background: rgba(237, 35, 159, 0.6);
+	background: sienna;
 	/* filter: blur(4px);
 	-o-filter: blur(4px);
 	-ms-filter: blur(4px);
@@ -201,11 +201,11 @@ button.primary_btn {
 .gradient-bg,
 .primary_btn2:before,
 .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link,
-.footer_area .footer_social a:hover {
-	background: -webkit-linear-gradient(18deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 97.71%);
-	background: -moz-linear-gradient(18deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 97.71%);
-	background: -o-linear-gradient(18deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 97.71%);
-	background: linear-gradient(18deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 97.71%)
+.footer_area .footer_s a:hover {
+	background: -webkit-linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+	background: -moz-linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+	background: -o-linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+	background: linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%)
 }
 
 .border-gradient {
@@ -223,12 +223,12 @@ button.primary_btn {
 }
 
 .gradient-color,
-.home_banner_area .banner_content .social_icons a:hover,
+.home_banner_area .banner_content .s_icons a:hover,
 .statistics_item h3 {
-	background: -webkit-linear-gradient(18deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 97.71%);
-	background: -moz-linear-gradient(18deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 97.71%);
-	background: -o-linear-gradient(18deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 97.71%);
-	background: linear-gradient(18deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 97.71%);
+	background: -webkit-linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+	background: -moz-linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+	background: -o-linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
+	background: linear-gradient(18deg, sienna, rgba(255, 0, 0, 0) 97.71%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent
 }
@@ -368,7 +368,7 @@ button.primary_btn {
 
 .navbar .nav .nav-item:hover .nav-link,
 .navbar .nav .nav-item.active .nav-link {
-	color: #efb6df
+	color: sienna
 }
 
 .navbar .nav .nav-item.submenu {
@@ -564,7 +564,7 @@ button.primary_btn {
 	}
 }
 
-.home_banner_area .banner_content .social_icons a {
+.home_banner_area .banner_content .s_icons a {
 	color: rgba(5, 54, 77, 0.5);
 	font-size: 20px;
 	display: inline-block;
@@ -3977,7 +3977,7 @@ h6 {
 	}
 	.footer-bottom .footer-social {
 		text-align: center;
-		margin-top: 15px
+		margin: 15px
 	}
 	.made_life_inner .nav.nav-tabs li {
 		flex: 0 0 50%;
@@ -4098,12 +4098,12 @@ h6 {
 	text-align: center
 }
 
-.footer_area .footer_social {
+.footer_area .footer_s {
 	text-align: center;
-	margin: 5px 0px 30px
+	margin: 5px 0px 30px;
 }
 
-.footer_area .footer_social a {
+.footer_area .footer_s a {
 	display: inline-block;
 	width: 45px;
 	height: 45px;
@@ -4118,13 +4118,14 @@ h6 {
 	-moz-transition: all 0.4s ease 0s;
 	-o-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s
+
 }
 
-.footer_area .footer_social a:last-child {
+.footer_area .footer_s a:last-child {
 	margin-right: 0px
 }
 
-.footer_area .footer_social a:hover {
+.footer_area .footer_s a:hover {
 	color: #ffffff
 }
 

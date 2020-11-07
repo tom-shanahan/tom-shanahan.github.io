@@ -8,6 +8,7 @@ import Voronoi from './components/voronoi';
 import AreaBump from './components/areabump';
 import StreamGraph from './components/streamgraph';
 
+// import './html/travels.html'
 import './App.css';
 import './css/bootstrap.css'
 // import './vendors/linericon/style.css'
@@ -17,15 +18,16 @@ import './css/themify-icons.css'
 // import './vendors/nice-select/css/nice-select.css'
 import './css/style.css'
 import './css/font-awesome.min.css'
-import {Button, Grid} from '@material-ui/core';
+import {Button, CardContent, Grid, Typography} from '@material-ui/core';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
-import { fas,faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import {fas, faChevronUp, faHardHat, faHammer} from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab,faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons'
+import Link from "@material-ui/core/Link";
 
-library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp)
+library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp,faHardHat)
 
 class App extends Component {
     render() {
@@ -46,7 +48,8 @@ class App extends Component {
                                         <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#project-header">Projects</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="../../html/travels.html">Travels</a></li>
+                                        {/*TODO: add Travels section*/}
+                                        {/*<li class="nav-item"><a class="nav-link" href="./html/travels.html">Travels</a></li>*/}
                                     </ul>
                                 </div>
                             </div>
@@ -65,12 +68,12 @@ class App extends Component {
                                         <h3>Welcome!</h3>
                                         <h1 class="text-uppercase">I'm Tom Shanahan</h1>
                                         <h5 class="text-uppercase">Tech Enthusiast, Data Nerd, Software Engineer</h5>
-                                        <div class="social_icons my-5">
+                                        <div class="s_icons my-5">
                                             <a href="https://www.linkedin.com/in/tshanahan1/"><i class="ti-linkedin"></i></a>
                                             <a href="https://github.com/tom-shanahan"><i class="ti-github"></i></a>
                                         </div>
                                         <a class="link-button" href="#projects"><span>See My Work</span></a>
-                                        <a class="link-button" href="https://drive.google.com/file/d/17fyHKjfr3zuP1BY33Lg3P2mpnJqSOxAw/view?usp=sharing"><span>See My Resume</span></a>
+                                        <a class="link-button" href="https://drive.google.com/file/d/17fyHKjfr3zuP1BY33Lg3P2mpnJqSOxAw/view?usp=sharing" target="_blank"><span>See My Resume</span></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -138,17 +141,19 @@ class App extends Component {
                         </div>
 
                         <Grid
-                            container
+                            container="True"
+                            display="flex"
                             direction="row"
                             justify="center"
                             alignItems="stretch"
+                            spacing={3}
                         >
                             <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                 <VisualizationCard
                                     title="Voronoi Diagram"
                                     id="voronoi-div"
                                     img='/images/tv_corr.PNG'
-                                    link="voronoi.js"
+                                    link="tom-shanahan.github.io/blob/NewFormat/src/components/voronoi.js"
                                     data="https://colab.research.google.com/drive/1JNnXVkwvR1CrOsiIdwod2ZwVKtGYaWqt?usp=sharing"
                                     shortDescription="Exploring a television recommendation engine using a dynamic Voronoi diagram. Facilitates the understanding of complex multi-dimensional data."
                                 />
@@ -158,7 +163,7 @@ class App extends Component {
                                     title="Stream Graph"
                                     id="stream-div"
                                     img='/images/stream.png'
-                                    link="streamgraph.js"
+                                    link="tom-shanahan.github.io/blob/NewFormat/src/components/streamgraph.js"
                                     data="https://colab.research.google.com/drive/1lRCAhOrRBCW8YIJZ4jkjv4A4K1JK5m2s?usp=sharing"
                                     shortDescription="Tracking country-level COVID-19 cases and fatality rate over time. Toggleable axis improves useability."
                                 />
@@ -168,13 +173,43 @@ class App extends Component {
                                     title="Area Bump Chart"
                                     id="bump-div"
                                     img='/images/bump.png'
-                                    link="areabump.js"
+                                    link="tom-shanahan.github.io/blob/NewFormat/src/components/areabump.js"
                                     data='https://colab.research.google.com/drive/1BYTmrtlquchTl7eTeBpWeYPnctlUDsjg?usp=sharing'
                                     shortDescription="Tracking global share of COVID-19 cases and fatalities by country. Toggle allows easy switching between datasets."
                                 />
                             </Grid>
+                            <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                <VisualizationCard
+                                    title="Machine Learning"
+                                    id="None"
+                                    img='/images/machine_learning.png'
+                                    link="Machine-Learning-Projects"
+                                    data="None"
+                                    shortDescription="Collection of machine learning projects utilizing Pandas, NumPy, Scikit-Learn, and more."
+                                />
+                            </Grid>
+                            <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                <VisualizationCard
+                                    title="MapReduce Implementation"
+                                    id="None"
+                                    img='/images/mapReduce.png'
+                                    link="MapReduce-Implementation"
+                                    data='None'
+                                    shortDescription="Hadoop-like MapReduce implementation for operations over large datasets. Fault tolerant implementation successfully and rapidly processed hundreds of files with billions of records."
+                                />
+                            </Grid>
+                            <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                <br/><br/><br/><br/><br/>
+                                <div style={{color:"darkslateblue",fontSize:'40px',display:'flex','justify-content':'center'}}>
+                                    <FontAwesomeIcon style={{margin:'5px'}} icon={faHardHat}/>
+                                    <FontAwesomeIcon style={{margin:'5px'}} icon={faHammer}/>
+                                </div>
+                                <br/>
+                                <Typography gutterBottom variant="h5" component="h2" align={'center'}>
+                                    And More in Progress!
+                                </Typography>
+                            </Grid>
                         </Grid>
-                        <br></br><p> And more in progress! </p>
                     </div>
                 </section>
 
@@ -253,21 +288,22 @@ class App extends Component {
                                                         <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
                                                         <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
                                                         <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects </a></li>
-                                                        <li class="nav-item"><a class="nav-link text-white" href="../../html/travels.html">Travels</a></li>
+                                                        {/*TODO: add Travels section*/}
+                                                        {/*<li class="nav-item"><a class="nav-link text-white" href="../html/travels.html">Travels</a></li>*/}
                                                     </ul>
                                                 </div>
                                             </nav>
                                         </div>
                                     </div>
-                                    <div class="footer_social mt-lg-0 mt-4">
-                                        <a href="https://www.linkedin.com/in/tshanahan1/"><FontAwesomeIcon icon={faLinkedin}/></a>
-                                        <a href="https://github.com/tom-shanahan"><FontAwesomeIcon icon={faGithub} /></a>
+                                    <div class="footer_s mt-lg-0 mt-4">
+                                        <a href="https://www.linkedin.com/in/tshanahan1/" target='_blank'><FontAwesomeIcon icon={faLinkedin}/></a>
+                                        <a href="https://github.com/tom-shanahan" target='_blank'><FontAwesomeIcon icon={faGithub} /></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row footer_bottom justify-content-center">
-                            <p class="col-lg-8 col-sm-12 footer-text"/>
+                        <div class="row justify-content-center">
+                            <p style={{color:"white"}}>Made with React, D3, and Github Pages</p>
                     </div>
                 </div>
                 </footer>
