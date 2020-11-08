@@ -73,7 +73,7 @@ class App extends Component {
                                             <a href="https://github.com/tom-shanahan"><i class="ti-github"></i></a>
                                         </div>
                                         <a class="link-button" href="#projects"><span>See My Work</span></a>
-                                        <a class="link-button" href="https://drive.google.com/file/d/17fyHKjfr3zuP1BY33Lg3P2mpnJqSOxAw/view?usp=sharing" target="_blank"><span>See My Resume</span></a>
+                                        <a class="link-button" href="https://drive.google.com/file/d/17fyHKjfr3zuP1BY33Lg3P2mpnJqSOxAw/view?usp=sharing" target="_blank" rel='noopener noreferrer'><span>See My Resume</span></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -296,8 +296,8 @@ class App extends Component {
                                         </div>
                                     </div>
                                     <div class="footer_s mt-lg-0 mt-4">
-                                        <a href="https://www.linkedin.com/in/tshanahan1/" target='_blank'><FontAwesomeIcon icon={faLinkedin}/></a>
-                                        <a href="https://github.com/tom-shanahan" target='_blank'><FontAwesomeIcon icon={faGithub} /></a>
+                                        <a href="https://www.linkedin.com/in/tshanahan1/" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faLinkedin}/></a>
+                                        <a href="https://github.com/tom-shanahan" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faGithub} /></a>
                                     </div>
                                 </div>
                             </div>
