@@ -314,8 +314,8 @@ button.primary_btn {
 	margin-left: 140px
 }
 
-@media (max-width: 991px) {
-	.header_area .menu_nav {
+@media (max-mwidth: 991px) {
+	.header_area .enu_nav {
 		margin-left: 0px
 	}
 }

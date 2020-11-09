@@ -69,10 +69,10 @@ class App extends Component {
                                         <h1 class="text-uppercase">I'm Tom Shanahan</h1>
                                         <h5 class="text-uppercase">Tech Enthusiast, Data Nerd, Software Engineer</h5>
                                         <div class="s_icons my-5">
-                                            <a href="https://www.linkedin.com/in/tshanahan1/"><i class="ti-linkedin"></i></a>
-                                            <a href="https://github.com/tom-shanahan"><i class="ti-github"></i></a>
+                                            <a href="https://www.linkedin.com/in/tshanahan1/" target='_blank' rel='noopener noreferrer'><i class="ti-linkedin"></i></a>
+                                            <a href="https://github.com/tom-shanahan" target='_blank' rel='noopener noreferrer'><i class="ti-github"></i></a>
                                         </div>
-                                        <a class="link-button" href="#projects"><span>See My Work</span></a>
+                                        <a class="link-button" href="#project-header"><span>See My Work</span></a>
                                         <a class="link-button" href="https://drive.google.com/file/d/17fyHKjfr3zuP1BY33Lg3P2mpnJqSOxAw/view?usp=sharing" target="_blank" rel='noopener noreferrer'><span>See My Resume</span></a>
                                     </div>
                                 </div>
@@ -153,7 +153,7 @@ class App extends Component {
                                     title="Voronoi Diagram"
                                     id="voronoi-div"
                                     img='/images/tv_corr.PNG'
-                                    link="tom-shanahan.github.io/blob/NewFormat/src/components/voronoi.js"
+                                    link="tom-shanahan.github.io/blob/master/src/components/voronoi.js"
                                     data="https://colab.research.google.com/drive/1JNnXVkwvR1CrOsiIdwod2ZwVKtGYaWqt?usp=sharing"
                                     shortDescription="Exploring a television recommendation engine using a dynamic Voronoi diagram. Facilitates the understanding of complex multi-dimensional data."
                                 />
@@ -163,7 +163,7 @@ class App extends Component {
                                     title="Stream Graph"
                                     id="stream-div"
                                     img='/images/stream.png'
-                                    link="tom-shanahan.github.io/blob/NewFormat/src/components/streamgraph.js"
+                                    link="tom-shanahan.github.io/blob/master/src/components/streamgraph.js"
                                     data="https://colab.research.google.com/drive/1lRCAhOrRBCW8YIJZ4jkjv4A4K1JK5m2s?usp=sharing"
                                     shortDescription="Tracking country-level COVID-19 cases and fatality rate over time. Toggleable axis improves useability."
                                 />
@@ -173,7 +173,7 @@ class App extends Component {
                                     title="Area Bump Chart"
                                     id="bump-div"
                                     img='/images/bump.png'
-                                    link="tom-shanahan.github.io/blob/NewFormat/src/components/areabump.js"
+                                    link="tom-shanahan.github.io/blob/master/src/components/areabump.js"
                                     data='https://colab.research.google.com/drive/1BYTmrtlquchTl7eTeBpWeYPnctlUDsjg?usp=sharing'
                                     shortDescription="Tracking global share of COVID-19 cases and fatalities by country. Toggle allows easy switching between datasets."
                                 />
