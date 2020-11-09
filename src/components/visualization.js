@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {Card, Grid, IconButton, makeStyles} from '@material-ui/core';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { fas,faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab,faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons'
-
+import VisualizationCard from "./visualizationcard";
 library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp)
 
 const useStyles = makeStyles({
@@ -18,7 +17,7 @@ const useStyles = makeStyles({
     },
 });
 
-class Visualization extends Component {
+export default class Visualization extends Component {
     constructor(props){
         super(props)
         this.scrollUp = this.scrollUp.bind(this);
@@ -36,7 +35,6 @@ class Visualization extends Component {
                     </button>
                 </div>
                 <Grid container
-                      // id={this.props.id}
                       spacing={0}
                       direction="row"
                       justify="center"
@@ -50,7 +48,7 @@ class Visualization extends Component {
                             className=".viz-div">{this.props.title}
                         </h2>
                         <div>
-                            {/*TODO:html allows for links*/}
+                            {/*Note:html allows for links*/}
                             <p dangerouslySetInnerHTML={{__html: this.props.description}} />
                         </div>
                     </Grid>
@@ -59,5 +57,3 @@ class Visualization extends Component {
         )
     }
 }
-
-export default Visualization;

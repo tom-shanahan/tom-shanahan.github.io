@@ -13,8 +13,9 @@ import {timeMonth, timeWeek} from 'd3-time'
 import { timeFormat, timeParse } from 'd3-time-format'
 import { transition } from 'd3-transition'
 import loadedData from '../assets/data/StreamChartData.json'
+import VisualizationCard from "./visualizationcard";
 
-class StreamGraph extends Component {
+export default class StreamGraph extends Component {
     constructor(props){
         super(props)
         this.createStreamGraph = this.createStreamGraph.bind(this);
@@ -166,7 +167,6 @@ class StreamGraph extends Component {
             //order for
             var dailyValues = short.map(country => country.values);
             var zipped = zip(dailyValues);
-
             var stackKeys = zipped[0].map(country => country.key.replace(/[^A-Za-z]/g, ''));
             var singleDayMax = 0;
 
@@ -295,25 +295,10 @@ class StreamGraph extends Component {
             .attr('height',15)
             .attr('fill', 'url(#legend-grad)');
         legend.append('text')
-            // .attr('text-anchor', 'top middle')
-            // .attr('transform', 'translate('+ -10 +','+10+')')
-            // .attr('margin-top','44px')
-            // .attr('display','flex')
-            // .attr('justify-content','center')
             .attr('font-size','16px')
             .attr("x", 75)
-            // .attr("y", function (d, i) { return 90 + i * 14; })
-            // .attr("alignment-baseline","middle")
-            // .attr("text-anchor", "left")
-            // .attr('data-style-padding','55px')
-            // .attr("transform", "translate(" + (width/2) + "," + (height + 40) + ")")
-            // .style('text-anchor', 'left')
             .attr('width',300)
-            // .attr('align','center')
-            // .attr('display','flex')
-            // .attr('justify-content','center')
             .text('Case Fatality Rate');
-
 
         var lScale = scaleLinear()
             .range([0, 300])
@@ -393,4 +378,3 @@ class StreamGraph extends Component {
         )
     }
 }
-export default StreamGraph

@@ -8,8 +8,9 @@ import { scaleLinear} from 'd3-scale'
 import { select } from 'd3-selection'
 import { transition } from 'd3-transition'
 import loadedData from '../assets/data/voronoi.json'
+import VisualizationCard from "./visualizationcard";
 
-class Voronoi extends Component {
+export default class Voronoi extends Component {
   constructor(props){
     super(props)
     this.createVoronoi = this.createVoronoi.bind(this);
@@ -113,19 +114,14 @@ class Voronoi extends Component {
     tooltip.style("visibility", "visible")
         .attr("opacity",1)
         .text(d => d);
-    // this.state.svg.select("text").remove()
     tooltip.enter()
         .append("text")
-        // .attr("class", "voronoi-tooltip tooltip")
         .attr("class", "voronoi-tooltip")
         .attr("x","0")
         .attr("y",(d,i) => `${i-2}em`)
         .attr("opacity",1)
         .text(d => d);
   }
-
-  // const totalSum = data.reduce((total, dp) => +total + +dp.popularity, 0);
-  // d3.select('.tooltip .totalValue').text(totalSum);
 
   render() {
     return (
@@ -139,4 +135,3 @@ class Voronoi extends Component {
     )
   }
 }
-export default Voronoi

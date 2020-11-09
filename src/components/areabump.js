@@ -12,7 +12,7 @@ import { timeParse } from 'd3-time-format'
 import { transition } from 'd3-transition'
 import loadedData from '../assets/data/area_bump.json'
 
-class AreaBump extends Component {
+export default class AreaBump extends Component {
   constructor(props){
       super(props);
       this.createAreaBump = this.createAreaBump.bind(this);
@@ -21,7 +21,6 @@ class AreaBump extends Component {
       this.updateBumpTooltip = this.updateBumpTooltip.bind(this);
       this.toggleType = this.toggleType.bind(this);
       this.toggleLocation = this.toggleLocation.bind(this);
-      // this.toggleTitle = this.toggleTitle.bind(this);
       this.state = {
         'svg':null
         ,'margin':null
@@ -133,19 +132,6 @@ class AreaBump extends Component {
     });
   }
 
-  // toggleTitle() {
-  //   var curTitle = document.getElementById('chart-title');
-  //   console.log(curTitle.value);
-  //   if (curTitle != null && curTitle.value == "Deaths"){
-  //     document.getElementById('chart-title').textContent = "Cases";
-  //     return
-  //   }
-  //   else if (curTitle != null && curTitle.value == "Cases") {
-  //     document.getElementById('chart-title').textContent = "Deaths";
-  //     return
-  //   }
-  // }
-
   toggleLocation() {
     this.setState((prevState) => {
       return {showGlobal:!prevState.showGlobal}
@@ -255,7 +241,6 @@ class AreaBump extends Component {
     })
 
     var current = format(",")(val.count)
-    // var pct = format(".0%")(val.adjustedPct)
     var pct = format(".0%")(val.pct)
     var day = val.date
     var n = d.key;
@@ -288,53 +273,32 @@ class AreaBump extends Component {
   }
 
   render() {
+    let buttonTitle = "View Fatality Data";
+    let chartTitle = "Share of Global COVID-19 Cases by Country";
     if (this.state.showCases) {
-      return (
-          <div className= 'viz-container'>
-            <p className='viz-title' id='chart-title'>Share of Global COVID-19 Deaths by Country</p>
-            <svg
-                onMouseMove={this.onMouseMove}
-                ref={node => this.node = node}
-                width={this.props.size[0]}
-                height={this.props.size[1]}>
-            </svg>
-            <div className='button-container'>
-              <button
-                  className='card-button chart-toggle'
-                  onClick={() => {
-                    // this.toggleType();
-                    // this.toggleTitle();
-                    this.drawData();
-                  }}>
-                View Case Data
-              </button>
-            </div>
-          </div>
-      );
+      buttonTitle = "View Case Data";
+      chartTitle = "Share of Global COVID-19 Deaths by Country"
     }
+
     return (
       <div className= 'viz-container'>
-        <p className='viz-title' id='chart-title'>Share of Global COVID-19 Cases by Country</p>
+        <p className='viz-title' id='chart-title'>{chartTitle}</p>
         <svg
-          onMouseMove={this.onMouseMove}
-          ref={node => this.node = node}
-          width={this.props.size[0]}
-          height={this.props.size[1]}>
+            onMouseMove={this.onMouseMove}
+            ref={node => this.node = node}
+            width={this.props.size[0]}
+            height={this.props.size[1]}>
         </svg>
-        <div class='button-container'>
+        <div className='button-container'>
           <button
-              class='card-button chart-toggle'
+              className='card-button chart-toggle'
               onClick={() => {
-                // this.toggleType();
-                // this.toggleTitle();
                 this.drawData();
               }}>
-            View Fatality Data
+            {buttonTitle}
           </button>
         </div>
       </div>
     );
   }
 }
-
-export default AreaBump

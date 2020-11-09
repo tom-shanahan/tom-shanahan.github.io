@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {Card, CardHeader, CardContent, CardActions, Button, IconButton, CardMedia,CardActionArea, Typography, makeStyles, Grid} from '@material-ui/core';
-// import '../App.css'
 
-class VisualizationCard extends Component {
+export default class VisualizationCard extends Component {
     constructor(props) {
         super(props)
         this.scrollDown = this.scrollDown.bind(this);
@@ -94,4 +93,3 @@ class VisualizationCard extends Component {
         )
     }
 }
-export default VisualizationCard;
