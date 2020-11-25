@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import {Card, CardHeader, CardContent, CardActions, Button, IconButton, CardMedia,CardActionArea, Typography, makeStyles, Grid} from '@material-ui/core';
+import {Link} from "react-router-dom";
 
 export default class VisualizationCard extends Component {
-    constructor(props) {
-        super(props)
-        this.scrollDown = this.scrollDown.bind(this);
-    }
+    // constructor(props) {
+    //     super(props)
+    //     this.scrollDown = this.scrollDown.bind(this);
+    // }
 
-    scrollDown() {
-        console.log("scrollDown", this.props.id, window)
-        document.getElementById(this.props.id).scrollIntoView({behavior: "smooth"});
-    }
+    // scrollDown() {
+    //     console.log("scrollDown", this.props.id, window)
+    //     document.getElementById(this.props.id).scrollIntoView({behavior: "smooth"});
+    // }
 
     render() {
         const isData = this.props.data;
-        const isProject = this.props.id;
+        const pageLink = this.props.id;
 
         let dataButton = <div/>;
         let projectButton = <div/>;
@@ -28,22 +29,30 @@ export default class VisualizationCard extends Component {
                 />
             </CardMedia>
 
-        if (isProject !== "None") {
+        if (pageLink !== "None") {
             projectButton =
-                <Button colored onClick={this.scrollDown} class="card-button">
-                    <span>Project</span>
-                </Button>
+                <Link to={{pathname: pageLink}}>
+                    <Button colored class="card-button">
+                        <span>Project</span>
+                    </Button>
+                </Link>
+
+                // <Button colored onClick={this.scrollDown} class="card-button">
+                //     <span>Project</span>
+                // </Button>
 
             cardLink =
-                <CardMedia
-                    onClick={this.scrollDown}
-                    style={{ display:'flex', justifyContent:'center'}}>
-                    <img
-                        src={this.props.img}
-                        alt={this.props.title}
-                        style={{'max-height':'200px','max-width':'325px','height':'auto','width':'auto','margin':0,'buffer':0}}
-                    />
-                </CardMedia>
+                <Link to={{pathname: pageLink}}>
+                    <CardMedia
+                        style={{ display:'flex', justifyContent:'center'}}>
+                        <img
+                            src={this.props.img}
+                            alt={this.props.title}
+                            style={{'max-height':'200px','max-width':'325px','height':'auto','width':'auto','margin':0,'buffer':0}}
+                        />
+                    </CardMedia>
+                </Link>
+
         }
         if (isData !== "None") {
             dataButton =
@@ -65,6 +74,10 @@ export default class VisualizationCard extends Component {
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
                             {this.props.shortDescription}
+                        </Typography>
+                        <p className="half-line"></p>
+                        <Typography variant="subtitle2" color="textSecondary" align={'center'}>
+                            Created with {this.props.tools}
                         </Typography>
                     </CardContent>
                 </CardActionArea>

@@ -28,8 +28,9 @@ function ProjectsPage(){
                     <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                         <VisualizationCard
                             title="Voronoi Diagram"
-                            id="voronoi-div"
+                            id="tv_voronoi"
                             img='/images/tv_corr.PNG'
+                            tools="React & D3.js"
                             link="tom-shanahan.github.io/blob/master/src/components/voronoi.js"
                             data="https://colab.research.google.com/drive/1JNnXVkwvR1CrOsiIdwod2ZwVKtGYaWqt?usp=sharing"
                             shortDescription="Exploring a television recommendation engine using a dynamic Voronoi diagram. Facilitates the understanding of complex multi-dimensional data."
@@ -38,8 +39,9 @@ function ProjectsPage(){
                     <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                         <VisualizationCard
                             title="Stream Graph"
-                            id="stream-div"
+                            id="stream_graph"
                             img='/images/stream.png'
+                            tools="React & D3.js"
                             link="tom-shanahan.github.io/blob/master/src/components/streamgraph.js"
                             data="https://colab.research.google.com/drive/1lRCAhOrRBCW8YIJZ4jkjv4A4K1JK5m2s?usp=sharing"
                             shortDescription="Tracking country-level COVID-19 cases and fatality rate over time. Toggleable axis improves useability."
@@ -48,8 +50,9 @@ function ProjectsPage(){
                     <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                         <VisualizationCard
                             title="Area Bump Chart"
-                            id="bump-div"
+                            id="/area_bump"
                             img='/images/bump.png'
+                            tools="React & D3.js"
                             link="tom-shanahan.github.io/blob/master/src/components/areabump.js"
                             data='https://colab.research.google.com/drive/1BYTmrtlquchTl7eTeBpWeYPnctlUDsjg?usp=sharing'
                             shortDescription="Tracking global share of COVID-19 cases and fatalities by country. Toggle allows easy switching between datasets."
@@ -60,6 +63,7 @@ function ProjectsPage(){
                             title="Machine Learning"
                             id="None"
                             img='/images/machine_learning.png'
+                            tools="React & D3.js"
                             link="Machine-Learning-Projects"
                             data="None"
                             shortDescription="Collection of machine learning projects utilizing Pandas, NumPy, Scikit-Learn, and more."
@@ -70,6 +74,18 @@ function ProjectsPage(){
                             title="MapReduce Implementation"
                             id="None"
                             img='/images/mapReduce.png'
+                            tools="C/C++"
+                            link="MapReduce-Implementation"
+                            data='None'
+                            shortDescription="Hadoop-like MapReduce implementation for operations over large datasets. Fault tolerant implementation successfully and rapidly processed hundreds of files with billions of records."
+                        />
+                    </Grid>
+                    <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <VisualizationCard
+                            title="Facial Recognition"
+                            id="facial_recog"
+                            img='/images/facial_recog.png'
+                            tools="Python, Numpy, Scikit-learn, SciPy, & Matplotlib"
                             link="MapReduce-Implementation"
                             data='None'
                             shortDescription="Hadoop-like MapReduce implementation for operations over large datasets. Fault tolerant implementation successfully and rapidly processed hundreds of files with billions of records."

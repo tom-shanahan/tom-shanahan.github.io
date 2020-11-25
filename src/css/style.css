@@ -475,10 +475,11 @@ button.primary_btn {
 }
 
 .home_banner_area {
-	padding-top: 140px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 	background-position: center;
 	background-size: cover;
-	min-height: 600px
+	min-height: 500px
 }
 
 @media (max-width: 991px) {

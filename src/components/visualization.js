@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import {Card, Grid, IconButton, makeStyles} from '@material-ui/core';
+import {Button, Card, Grid, IconButton, makeStyles} from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
-import { fas,faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { fas,faChevronUp,faChevronLeft,faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab,faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons'
 import VisualizationCard from "./visualizationcard";
-library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp)
+import {Link} from "react-router-dom";
+library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp,faChevronLeft,faChevronRight)
 
 const useStyles = makeStyles({
     root: {
@@ -31,7 +32,18 @@ export default class Visualization extends Component {
                 <div style={{'buffer-top':'50px'}}>
                     <button className="mdc-icon-button keyboard_arrow_up card-button"
                             onClick={this.scrollUp}>
-                        <FontAwesomeIcon icon={faChevronUp}/>
+                        <FontAwesomeIcon icon={faChevronRight}/>
+                    </button>
+
+                    <Link to={{pathname: '/projects'}}>
+                        <button className="mdc-icon-button keyboard_arrow_up card-button">
+                            <FontAwesomeIcon icon={faChevronUp}/>
+                        </button>
+                    </Link>
+
+                    <button className="mdc-icon-button keyboard_arrow_up card-button"
+                            onClick={this.scrollUp}>
+                        <FontAwesomeIcon icon={faChevronLeft}/>
                     </button>
                 </div>
                 <Grid container
