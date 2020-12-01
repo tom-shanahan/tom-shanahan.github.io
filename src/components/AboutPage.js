@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 function AboutPage() {
     return (
         <div className="vertical-center">
-            <span id="about" className="anchor"></span>
+            {/*<span id="about" className="anchor"></span>*/}
             <div className="container">
                 <div className="row justify-content-start align-items-center">
                     <div className="col-lg-5">
