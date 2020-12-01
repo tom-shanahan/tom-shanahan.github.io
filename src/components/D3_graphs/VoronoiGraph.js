@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../App.css'
+import '../../App.css'
 import { extent } from 'd3-array'
 import { rgb } from 'd3-color'
 import { Delaunay } from "d3-delaunay"
@@ -7,10 +7,10 @@ import { interpolateRgb } from 'd3-interpolate'
 import { scaleLinear} from 'd3-scale'
 import { select } from 'd3-selection'
 import { transition } from 'd3-transition'
-import loadedData from '../assets/data/voronoi.json'
-import VisualizationCard from "./visualizationcard";
+import loadedData from '../../assets/data/voronoi.json'
+import ProjectCard from "../ProjectCard";
 
-export default class Voronoi extends Component {
+export default class VoronoiGraph extends Component {
   constructor(props){
     super(props)
     this.createVoronoi = this.createVoronoi.bind(this);

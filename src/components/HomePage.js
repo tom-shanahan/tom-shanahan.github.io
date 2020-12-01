@@ -2,11 +2,11 @@ import React, { Component, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Visualization from './visualization';
-import VisualizationCard from './visualizationcard';
-import Voronoi from './voronoi';
-import AreaBump from './areabump';
-import StreamGraph from './streamgraph';
+import ProjectVisualizationMaster from './ProjectVisualizationMaster';
+import ProjectCard from './ProjectCard';
+import VoronoiGraph from './D3_graphs/VoronoiGraph';
+import AreaBumpGraph from './D3_graphs/AreaBumpGraph';
+import StreamGraph from './D3_graphs/StreamGraph';
 import '../App.css';
 import '../css/bootstrap.css'
 import '../css/themify-icons.css'

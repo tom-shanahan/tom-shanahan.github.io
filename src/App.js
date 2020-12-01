@@ -5,15 +5,18 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import './App.css';
 
-import HomePage from './components/home';
-import AboutPage from './components/about';
-import ProjectsPage from './components/projects';
-import Footer from './components/footer';
+import HomePage from './components/HomePage';
+import AboutPage from './components/AboutPage';
+import ProjectsPage from './components/ProjectsPage';
+import Footer from './components/Footer';
 import AreaBumpPage from "./components/project_pages/page_covid_area_bump";
 import StreamGraphPage from "./components/project_pages/page_covid_stream";
 import TVVoronoiPage from "./components/project_pages/page_tv_voronoiPage";
 import FacialRecogPage from "./components/project_pages/page_facial_recognition";
-import ScrollToTop from './components/scrollToTop'
+import MapReducePage from "./components/project_pages/MapReducePage";
+import DigitRecogPage from "./components/project_pages/DigitRecognizerPage";
+import ForestImagePage from "./components/project_pages/ForestImagePage";
+import ScrollToTop from './components/ScrollToTop';
 
 class App extends React.Component {
 
@@ -58,6 +61,15 @@ class App extends React.Component {
                         <Route path='/facial_recog'>
                             <FacialRecogPage />
                         </Route>
+                        <Route path='/map_reduce'>
+                            <MapReducePage />
+                        </Route>
+                        <Route path='/digit_recog'>
+                            <DigitRecogPage />
+                        </Route>
+                        <Route path='/forest_image'>
+                            <ForestImagePage />
+                        </Route>
                     </Switch>
                     <Footer />
                 </ScrollToTop>
@@ -66,5 +78,4 @@ class App extends React.Component {
     }
 
 }
-<ScrollToTop/>
 export default App;

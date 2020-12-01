@@ -1,14 +1,15 @@
 import React from "react";
-import Visualization from "../visualization";
-import AreaBump from "../areabump";
+import ProjectVisualizationMaster from "../ProjectVisualizationMaster";
+import AreaBump from "../D3_graphs/AreaBumpGraph";
 
 function AreaBumpPage(){
     return (
         <div className="container">
             <div id="bump-div" className="row project-detail">
-                <Visualization
+                <ProjectVisualizationMaster
                     style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
                     title="Area Bump Chart"
+                    tools="React & D3.js"
                     visualizationComponent=<AreaBump size={[500,500]}/>
                 description=
                 "This visualization shows the changing geographic patterns of the COVID-19 pandemic. It

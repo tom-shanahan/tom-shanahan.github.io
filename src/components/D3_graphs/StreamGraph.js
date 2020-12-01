@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../App.css'
+import '../../App.css'
 import { extent } from 'd3-array'
 import { axisBottom, axisRight } from 'd3-axis'
 import { nest } from 'd3-collection'
@@ -12,8 +12,8 @@ import { area, curveCardinal, stack } from 'd3-shape'
 import {timeMonth, timeWeek} from 'd3-time'
 import { timeFormat, timeParse } from 'd3-time-format'
 import { transition } from 'd3-transition'
-import loadedData from '../assets/data/StreamChartData.json'
-import VisualizationCard from "./visualizationcard";
+import loadedData from '../../assets/data/StreamChartData.json'
+import ProjectCard from "../ProjectCard";
 
 export default class StreamGraph extends Component {
     constructor(props){

@@ -1,14 +1,15 @@
 import React from "react";
-import Visualization from "../visualization";
-import StreamGraph from "../streamgraph";
+import ProjectVisualizationMaster from "../ProjectVisualizationMaster";
+import StreamGraph from "../D3_graphs/StreamGraph";
 
 function StreamGraphPage(){
     return (
         <div className="container">
             <div id="stream-div" className="row project-detail">
-                <Visualization
+                <ProjectVisualizationMaster
                     // TODO: Update recovered data
                     title="Ordered Stream Graph"
+                    tools="React & D3.js"
                     tip="Toggle between logarithmic and linear y-axis scales, hover over the graph for country and date specific information"
                     visualizationComponent=<StreamGraph size={[500,500]}/>
                 description=

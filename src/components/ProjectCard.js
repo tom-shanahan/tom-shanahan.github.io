@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Card, CardHeader, CardContent, CardActions, Button, IconButton, CardMedia,CardActionArea, Typography, makeStyles, Grid} from '@material-ui/core';
 import {Link} from "react-router-dom";
 
-export default class VisualizationCard extends Component {
+export default class ProjectCard extends Component {
     // constructor(props) {
     //     super(props)
     //     this.scrollDown = this.scrollDown.bind(this);

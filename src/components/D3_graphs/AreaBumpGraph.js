@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../App.css'
+import '../../App.css'
 import { extent } from 'd3-array'
 import { axisBottom, axisRight } from 'd3-axis'
 import { nest } from 'd3-collection'
@@ -10,7 +10,7 @@ import { area, curveBasis } from 'd3-shape'
 import {timeMonth, timeWeek} from 'd3-time'
 import { timeParse } from 'd3-time-format'
 import { transition } from 'd3-transition'
-import loadedData from '../assets/data/area_bump.json'
+import loadedData from '../../assets/data/area_bump.json'
 
 export default class AreaBump extends Component {
   constructor(props){

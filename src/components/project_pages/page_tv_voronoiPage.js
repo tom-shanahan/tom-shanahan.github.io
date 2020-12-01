@@ -1,14 +1,15 @@
 import React from "react";
-import Visualization from "../visualization";
-import Voronoi from "../voronoi";
+import ProjectVisualizationMaster from "../ProjectVisualizationMaster";
+import VoronoiGraph from "../D3_graphs/VoronoiGraph";
 
 function TVVoronoiPage(){
     return (
         <div className="container">
             <div id="voronoi-div" className="row project-detail" >
-                <Visualization
-                    title="Voronoi Diagram"
-                    visualizationComponent=<Voronoi size={[500,500]}/>
+                <ProjectVisualizationMaster
+                    title="VoronoiGraph Diagram"
+                    tools="React & D3.js"
+                    visualizationComponent=<VoronoiGraph size={[500,500]}/>
                 description=
                 "This graphic is part of a project I did on the preferences of television viewers. Utilizing over five
                 million viewer data points, I developed two recommendation engines: one based on viewer similarity;
@@ -20,7 +21,7 @@ function TVVoronoiPage(){
                 <br/><br/>
                 In the visualization, television shows are represented as dots, and their proximities
                 indicate similarity of user preference. However dimensionality reduction is imperfect and results in information loss.
-                The coloration is a Voronoi diagram which shows the correlations between shows. Shows which are greener have more
+                The coloration is a VoronoiGraph diagram which shows the correlations between shows. Shows which are greener have more
                 similar user preference. Interestingly, this coloration allows us to see where dimensionality reduction has maintained
                 relative relations and where it has disrupted these.
                 <br/><br/>
