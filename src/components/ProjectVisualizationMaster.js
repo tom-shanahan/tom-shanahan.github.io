@@ -5,7 +5,6 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { fas,faChevronUp,faChevronLeft,faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab,faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons'
-import ProjectCard from "./ProjectCard";
 import {Link} from "react-router-dom";
 library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp,faChevronLeft,faChevronRight)
 

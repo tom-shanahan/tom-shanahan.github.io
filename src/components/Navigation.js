@@ -10,6 +10,8 @@ import FacialRecogPage from "./project_pages/page_facial_recognition";
 import MapReducePage from "./project_pages/MapReducePage";
 import DigitRecogPage from "./project_pages/DigitRecognizerPage";
 import ForestImagePage from "./project_pages/ForestImagePage";
+import RecommendEnginePage from "./project_pages/RecommendEnginePage";
+import ContactPage from "./ContactPage";
 
 const Navigation = () => {
     return (
@@ -44,6 +46,12 @@ const Navigation = () => {
                 </Route>
                 <Route path='/forest_image'>
                     <ForestImagePage />
+                </Route>
+                <Route path='/recommendation_engine'>
+                    <RecommendEnginePage />
+                </Route>
+                <Route path='/contact'>
+                    <ContactPage />
                 </Route>
             </Switch>
         </div>

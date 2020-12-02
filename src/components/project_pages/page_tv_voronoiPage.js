@@ -5,7 +5,7 @@ import VoronoiGraph from "../D3_graphs/VoronoiGraph";
 function TVVoronoiPage(){
     return (
         <div className="container">
-            <div id="voronoi-div" className="row project-detail" >
+            <div id="voronoi-div" className="row project-detail">
                 <ProjectVisualizationMaster
                     title="VoronoiGraph Diagram"
                     tools="React & D3.js"

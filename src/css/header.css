@@ -1,8 +1,12 @@
 .navbar {
     background-color: #021017;
     color: #fff !important
-
 }
+
+.header-style {
+    line-height:50px !important;
+}
+
 .navbar a:hover {
 color: #333;
 }
@@ -22,8 +26,6 @@ a{
 .nav-item nav-link {
     color: #fff !important
 }
-
-
 
 .hoverable{
     display:inline-block;

@@ -59,17 +59,17 @@ function ProjectsPage(){
                                 shortDescription="Tracking global share of COVID-19 cases and fatalities by country. Toggle allows easy switching between datasets."
                             />
                         </Grid>
-                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                            <ProjectCard
-                                title="Machine Learning"
-                                id="/facial_recog"
-                                img='/images/machine_learning.png'
-                                tools="React & D3.js"
-                                link="Machine-Learning-Projects"
-                                data="None"
-                                shortDescription="Collection of machine learning projects utilizing Pandas, NumPy, Scikit-Learn, and more."
-                            />
-                        </Grid>
+                        {/*<Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">*/}
+                        {/*    <ProjectCard*/}
+                        {/*        title="Machine Learning"*/}
+                        {/*        id="/facial_recog"*/}
+                        {/*        img='/images/machine_learning.png'*/}
+                        {/*        tools="React & D3.js"*/}
+                        {/*        link="Machine-Learning-Projects"*/}
+                        {/*        data="None"*/}
+                        {/*        shortDescription="Collection of machine learning projects utilizing Pandas, NumPy, Scikit-Learn, and more."*/}
+                        {/*    />*/}
+                        {/*</Grid>*/}
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
                                 title="MapReduce Implementation"
@@ -109,6 +109,17 @@ function ProjectsPage(){
                                 id="forest_image"
                                 img='/images/forest_image.png'
                                 tools="Python, Pandas, Matplotlib, Numpy, & Scikit-learn"
+                                // link="MapReduce-Implementation"
+                                data='None'
+                                shortDescription="Hadoop-like MapReduce implementation for operations over large datasets. Fault tolerant implementation successfully and rapidly processed hundreds of files with billions of records."
+                            />
+                        </Grid>
+                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <ProjectCard
+                                title="TV Show Recommendation Engine"
+                                id="recommendation_engine"
+                                img='/images/machine_learning.png'
+                                tools="Python, Pandas, Matplotlib, Numpy, SciPy, & Scikit-learn"
                                 // link="MapReduce-Implementation"
                                 data='None'
                                 shortDescription="Hadoop-like MapReduce implementation for operations over large datasets. Fault tolerant implementation successfully and rapidly processed hundreds of files with billions of records."
