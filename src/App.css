@@ -125,26 +125,26 @@
 }
 
 .card-button{
-  border-color: #483d8b;
-  border-width: thin;
-  border-radius: 5px;
-  font-weight: bold;
-  display:inline-block;
-  padding:0.35em 1.2em;
-  margin:0 0.3em 0.3em 0;
-  box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  text-align:center;
-  transition: all 0.2s;
-  color:darkslateblue;
-  background-color:white;
+  border-color: #483d8b !important;
+  border-width: thin !important;
+  border-radius: 5px !important;
+  font-weight: bold !important;
+  display:inline-block !important;
+  padding:0.35em 1.2em !important;
+  margin:0 0.3em 0.3em 0 !important;
+  box-sizing: border-box !important;
+  text-decoration:none !important;
+  font-family:'Roboto',sans-serif !important;
+  text-align:center !important;
+  transition: all 0.2s !important;
+  color:darkslateblue !important;
+  background-color:white !important;
 }
 
 .card-button:hover{
-  color:white;
-  background-color: darkslateblue;
-  border-width: thin;
+  color:white !important;
+  background-color: darkslateblue !important;
+  border-width: thin !important;
 }
 
 /************** App.js *****************/
@@ -233,4 +233,3 @@
   -webkit-justify-content : center;
   justify-content : center;
 }
-

@@ -8,7 +8,6 @@ import { scaleLinear} from 'd3-scale'
 import { select } from 'd3-selection'
 import { transition } from 'd3-transition'
 import loadedData from '../../assets/data/voronoi.json'
-import ProjectCard from "../ProjectCard";
 
 export default class VoronoiGraph extends Component {
   constructor(props){
@@ -66,7 +65,7 @@ export default class VoronoiGraph extends Component {
   }
   drawVoronoi(){
     const that = this;
-    var color = this.state.genreColor;
+    let color = this.state.genreColor;
     if(!this.state.colorToggle) color = this.state.corrColor;
 
     const cs = scaleLinear()
@@ -109,8 +108,8 @@ export default class VoronoiGraph extends Component {
   }
 
   updateTooltip(d){
-    var tooltip = this.state.svg.selectAll(".voronoi-tooltip")
-        .data([`${d.label}`,`${d.genres}`]);
+    const tooltip = this.state.svg.selectAll(".voronoi-tooltip")
+        .data([`${d.label}`, `${d.genres}`]);
     tooltip.style("visibility", "visible")
         .attr("opacity",1)
         .text(d => d);

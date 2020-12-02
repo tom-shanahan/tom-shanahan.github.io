@@ -9,6 +9,8 @@ function AreaBumpPage(){
                 <ProjectVisualizationMaster
                     style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
                     title="Area Bump Chart"
+                    next_page="map_reduce"
+                    prev_page="stream_graph"
                     tools="React & D3.js"
                     visualizationComponent=<AreaBump size={[500,500]}/>
                 description=

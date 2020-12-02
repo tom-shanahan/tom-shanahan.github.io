@@ -1,10 +1,10 @@
 import React from "react";
-import AOS from '../../node_modules/aos/dist/aos';
-import Container from 'react-bootstrap/Container';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function AboutPage() {
     return (
-        <div className="vertical-center">
+        <div className="vertical-center" data-aos="fade-up">
             {/*<span id="about" className="anchor"></span>*/}
             <div className="container">
                 <div className="row justify-content-start align-items-center">
@@ -20,13 +20,13 @@ function AboutPage() {
                     <div className="offset-lg-1 col-lg-5">
                         <div className="main_title text-left">
                             <p className="top_text">About me <span></span></p>
-                            <p>
+                            <p style={{fontSize:16}}>
                                 I am a data-focused software engineer with a background in government,
                                 finance, and consulting. I have nearly 10 years of experience wrangling
                                 and gleaning insights from large, complex datasets. I have experience with
                                 data visualization, web development, and data science.
                             </p>
-                            <p>
+                            <p style={{fontSize:16}}>
                                 I recently completed a Masters in Computer Science at Cornell Tech,
                                 focused on the intersection of data and engineering. I studied Algorithms,
                                 Machine Learning, Data Science, and Distributed. I’m experienced working
@@ -42,4 +42,7 @@ function AboutPage() {
 }
 
 export default AboutPage;
-AOS.init();
+
+AOS.init({
+    duration: 600
+});

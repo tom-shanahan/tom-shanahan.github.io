@@ -4551,7 +4551,7 @@ form{
   .bp3-running-text table th, table.bp3-html-table th{
     color:#182026;
     font-weight:600; }
-  
+
   .bp3-running-text table td,
   table.bp3-html-table td{
     color:#182026; }
@@ -14238,17 +14238,17 @@ a.anchor-link {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 },
                 "HTML-CSS": {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14298,7 +14298,7 @@ The data contains information about TV shows viewing habits. The dataset contain
 <span class="n">reviews</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;/content/drive/My Drive/Colab Notebooks/Data ETL/input data/user-shows.txt&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
 
 <span class="n">imdb_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/My Drive/Colab Notebooks/Data ETL/input data/title.basics.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">imdb_data</span> <span class="o">=</span> <span class="n">imdb_data</span><span class="p">[</span><span class="n">imdb_data</span><span class="p">[</span><span class="s1">&#39;titleType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;tvSeries&#39;</span><span class="p">]</span> 
+<span class="n">imdb_data</span> <span class="o">=</span> <span class="n">imdb_data</span><span class="p">[</span><span class="n">imdb_data</span><span class="p">[</span><span class="s1">&#39;titleType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;tvSeries&#39;</span><span class="p">]</span>
 <span class="n">imdb_data</span> <span class="o">=</span> <span class="n">imdb_data</span><span class="p">[[</span><span class="s1">&#39;originalTitle&#39;</span><span class="p">,</span><span class="s1">&#39;genres&#39;</span><span class="p">]]</span>
 
 <span class="n">shows_pd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">shows</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">])</span>
@@ -14320,7 +14320,7 @@ The data contains information about TV shows viewing habits. The dataset contain
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14332,7 +14332,7 @@ The data contains information about TV shows viewing habits. The dataset contain
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14443,7 +14443,7 @@ Collaborative filtering relies on the reactions of similar users to identify ite
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14504,7 +14504,7 @@ Collaborative filtering relies on the reactions of similar users to identify ite
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14582,7 +14582,7 @@ Collaborative filtering relies on the reactions of similar users to identify ite
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14600,7 +14600,7 @@ Collaborative filtering relies on the reactions of similar users to identify ite
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14651,7 +14651,7 @@ Collaborative filtering relies on the reactions of similar users to identify ite
     <span class="k">elif</span> <span class="n">hi</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">v</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span>
     <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="mi">255</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">g</span> <span class="o">*</span> <span class="mi">255</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span>
-    
+
 <span class="k">def</span> <span class="nf">cart2pol</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -14717,7 +14717,7 @@ Collaborative filtering relies on the reactions of similar users to identify ite
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14725,7 +14725,7 @@ Collaborative filtering relies on the reactions of similar users to identify ite
 
 <div id="db88aa5d-ef0f-4c2a-b2cc-4b787007b6a1" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
 <script type="text/javascript">
-var element = document.getElementById('db88aa5d-ef0f-4c2a-b2cc-4b787007b6a1');
+    const element = document.getElementById('db88aa5d-ef0f-4c2a-b2cc-4b787007b6a1');
 
     async function download(id, filename, size) {
       if (!google.colab.kernel.accessAllowed) {
@@ -14766,7 +14766,7 @@ var element = document.getElementById('db88aa5d-ef0f-4c2a-b2cc-4b787007b6a1');
       a.click();
       div.remove();
     }
-  
+
 </script>
 </div>
 
@@ -14774,7 +14774,7 @@ var element = document.getElementById('db88aa5d-ef0f-4c2a-b2cc-4b787007b6a1');
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14782,8 +14782,8 @@ var element = document.getElementById('db88aa5d-ef0f-4c2a-b2cc-4b787007b6a1');
 
 <div id="db88aa5d-ef0f-4c2a-b2cc-4b787007b6a1" class="jp-RenderedJavaScript jp-OutputArea-output " data-mime-type="application/javascript">
 <script type="text/javascript">
-var element = document.getElementById('db88aa5d-ef0f-4c2a-b2cc-4b787007b6a1');
-download("download_3db4f968-d188-491e-8409-a3eb7b71bdb0", "TVVoronoiData.json", 4171177)
+    const element = document.getElementById('db88aa5d-ef0f-4c2a-b2cc-4b787007b6a1');
+    download("download_3db4f968-d188-491e-8409-a3eb7b71bdb0", "TVVoronoiData.json", 4171177)
 </script>
 </div>
 

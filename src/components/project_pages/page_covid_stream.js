@@ -9,6 +9,8 @@ function StreamGraphPage(){
                 <ProjectVisualizationMaster
                     // TODO: Update recovered data
                     title="Ordered Stream Graph"
+                    next_page="area_bump"
+                    prev_page="tv_voronoi"
                     tools="React & D3.js"
                     tip="Toggle between logarithmic and linear y-axis scales, hover over the graph for country and date specific information"
                     visualizationComponent=<StreamGraph size={[500,500]}/>

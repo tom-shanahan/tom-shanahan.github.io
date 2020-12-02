@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {Button, Card, Grid, IconButton, makeStyles} from '@material-ui/core';
+import { Card, Grid, makeStyles } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas,faChevronUp,faChevronLeft,faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab,faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons'
 import {Link} from "react-router-dom";
+import AOS from "aos";
 library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp,faChevronLeft,faChevronRight)
 
 const useStyles = makeStyles({
@@ -18,21 +19,15 @@ const useStyles = makeStyles({
 });
 
 export default class ProjectVisualizationMaster extends Component {
-    constructor(props){
-        super(props)
-        this.scrollUp = this.scrollUp.bind(this);
-    }
-    scrollUp(){
-        document.getElementById("project-header").scrollIntoView({behavior: "smooth", block: 'start'});
-    }
     render() {
         return(
-            <Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}}>
+            <Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}} data-aos="zoom-in">
                 <div style={{'buffer-top':'50px'}}>
-                    <button className="mdc-icon-button keyboard_arrow_up card-button"
-                            onClick={this.scrollUp}>
-                        <FontAwesomeIcon icon={faChevronRight}/>
-                    </button>
+                    <Link to={this.props.next_page}>
+                        <button className="mdc-icon-button keyboard_arrow_up card-button">
+                            <FontAwesomeIcon icon={faChevronRight}/>
+                        </button>
+                    </Link>
 
                     <Link to={{pathname: '/projects'}}>
                         <button className="mdc-icon-button keyboard_arrow_up card-button">
@@ -40,10 +35,11 @@ export default class ProjectVisualizationMaster extends Component {
                         </button>
                     </Link>
 
-                    <button className="mdc-icon-button keyboard_arrow_up card-button"
-                            onClick={this.scrollUp}>
-                        <FontAwesomeIcon icon={faChevronLeft}/>
-                    </button>
+                    <Link to={this.props.prev_page}>
+                        <button className="mdc-icon-button keyboard_arrow_up card-button">
+                            <FontAwesomeIcon icon={faChevronLeft}/>
+                        </button>
+                    </Link>
                 </div>
                 <Grid container
                       spacing={0}
@@ -71,3 +67,7 @@ export default class ProjectVisualizationMaster extends Component {
         )
     }
 }
+
+AOS.init({
+    duration: 600
+});

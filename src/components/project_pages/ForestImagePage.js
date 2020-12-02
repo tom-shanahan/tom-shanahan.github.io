@@ -8,6 +8,8 @@ function ForestImagePage(){
                 <ProjectDescriptionMaster
                     // style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
                     title="Random forests for image approximation"
+                    next_page="recommendation_engine"
+                    prev_page="digit_recog"
                     tools="Python, Pandas, Matplotlib, Numpy, & Scikit-learn"
                     html_location="/forest_image.html"
                     description=

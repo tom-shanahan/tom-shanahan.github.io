@@ -21,7 +21,7 @@ function ContactPage(){
 
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="_replyto" placeholder="email@google.com" required/>
+                        <Form.Control type="email" name="_replyto" placeholder="email@email.com" required/>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicText">
@@ -29,7 +29,7 @@ function ContactPage(){
                         <Form.Control input as="textarea" name="message" placeholder="Hi!" required />
                     </Form.Group>
 
-                    <Button variant="outline-success" type="submit">
+                    <Button colored className="card-button" variant="outline-success" type="submit">
                         Send
                     </Button>
                 </Form>
@@ -38,4 +38,6 @@ function ContactPage(){
     );
 }
 export default ContactPage;
-AOS.init();
+AOS.init({
+    duration: 600
+});

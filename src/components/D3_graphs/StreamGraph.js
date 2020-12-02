@@ -13,7 +13,6 @@ import {timeMonth, timeWeek} from 'd3-time'
 import { timeFormat, timeParse } from 'd3-time-format'
 import { transition } from 'd3-transition'
 import loadedData from '../../assets/data/StreamChartData.json'
-import ProjectCard from "../ProjectCard";
 
 export default class StreamGraph extends Component {
     constructor(props){
@@ -130,7 +129,7 @@ export default class StreamGraph extends Component {
             .y0(that.height-10)
             .y1(that.height-10);
 
-        var countries = that.svg.selectAll(`.globalData`)
+        const countries = that.svg.selectAll(`.globalData`)
             .data(layers);
 
         countries.enter()
@@ -146,15 +145,15 @@ export default class StreamGraph extends Component {
             .attr('opacity', 1);
 
         function prepareData(loadedData){
-            var full = nestAndSort(loadedData);
-            var short = nestAndSort(loadedData);
+            const full = nestAndSort(loadedData);
+            const short = nestAndSort(loadedData);
 
             //remove data
-            var l = short.length;
-            for(var j = 0; j < l; j++){
-                var vals = short[j].values;
-                var lv = vals.length;
-                var step = Math.round(lv/40);
+            const l = short.length;
+            for(let j = 0; j < l; j++){
+                const vals = short[j].values;
+                let lv = vals.length;
+                const step = Math.round(lv / 40);
                 while(lv-step > 0){
                     vals.splice(lv-step,step-1)
                     lv -= step;
@@ -165,28 +164,28 @@ export default class StreamGraph extends Component {
             populateGradients(full);
 
             //order for
-            var dailyValues = short.map(country => country.values);
-            var zipped = zip(dailyValues);
-            var stackKeys = zipped[0].map(country => country.key.replace(/[^A-Za-z]/g, ''));
-            var singleDayMax = 0;
+            const dailyValues = short.map(country => country.values);
+            const zipped = zip(dailyValues);
+            const stackKeys = zipped[0].map(country => country.key.replace(/[^A-Za-z]/g, ''));
+            const singleDayMax = 0;
 
-            var recombined = zipped.map(oneDay => {
-                var dayDict = {};
+            const recombined = zipped.map(oneDay => {
+                const dayDict = {};
                 dayDict['date'] = oneDay[0].date;
-                var sum = 0;
+                let sum = 0;
                 oneDay.forEach(country => {
                     sum += country.current_cases;
                     dayDict[country.key.replace(/[^A-Za-z]/g, '')] = country.current_cases;
                 })
-                singleDayMax = Math.max(singleDayMax,sum);
+                singleDayMax = Math.max(singleDayMax, sum);
                 return dayDict;
-            })
+            });
 
-            var stacker = stack()
+            const stacker = stack()
                 .keys(stackKeys);
-            var layers = stacker(recombined);
+            const layers = stacker(recombined);
 
-            for(var k = 0; k < l; k++){
+            for(let k = 0; k < l; k++){
                 layers[k]['d'] = full[k]
             }
 
@@ -194,16 +193,16 @@ export default class StreamGraph extends Component {
         }
         function nestAndSort(data){
             //manipulate data
-            var nester = nest()
+            const nester = nest()
                 .key(d => d.key);
-            var alphabetic = nester.entries(data);
-            var l = alphabetic.length;
+            const alphabetic = nester.entries(data);
+            const l = alphabetic.length;
 
             //order data
-            for(var i = 0; i < l; i++){
-                var vals = alphabetic[i].values;
-                var lv = vals.length;
-                var current = vals[lv-1];
+            for(let i = 0; i < l; i++){
+                const vals = alphabetic[i].values;
+                const lv = vals.length;
+                const current = vals[lv - 1];
                 alphabetic[i].fatality_rate = current.fatality_rate;
                 alphabetic[i].current = current.current_cases;
                 alphabetic[i].index = i;
@@ -213,27 +212,27 @@ export default class StreamGraph extends Component {
         }
         function populateGradients(alphabetic){
             //add color gradients
-            var l = alphabetic.length;
-            for(var i = 0; i < l; i++){
-                var id = `gradient-${alphabetic[i].key.replace(/[^A-Za-z]/g, '')}`;
+            const l = alphabetic.length;
+            for(let i = 0; i < l; i++){
+                const id = `gradient-${alphabetic[i].key.replace(/[^A-Za-z]/g, '')}`;
                 alphabetic[i].gradient = id;
 
-                var defs = that.svg.append('defs');
+                const defs = that.svg.append('defs');
 
-                var gradient = defs.append('linearGradient')
+                const gradient = defs.append('linearGradient')
                     .attr('id', id)
                     .attr('x1', '0%')
                     .attr('x2', '100%')
                     .attr('y1', '0%')
                     .attr('y2', '0%');
 
-                var values = alphabetic[i].values;
-                var lv = alphabetic[i].values.length;
+                const values = alphabetic[i].values;
+                const lv = alphabetic[i].values.length;
 
-                for(var j = 0; j < lv; j++){
-                    var offset = `${Math.round(j*100/(lv-1))}%`;
-                    var fr = values[j].fatality_rate/0.1;
-                    var col = that.cs(1-fr); //d3.interpolateRdYlGn(1-fr);
+                for(let j = 0; j < lv; j++){
+                    const offset = `${Math.round(j * 100 / (lv - 1))}%`;
+                    const fr = values[j].fatality_rate / 0.1;
+                    const col = that.cs(1 - fr); //d3.interpolateRdYlGn(1-fr);
 
                     gradient.append('stop')
                         .attr('offset', offset)
@@ -248,7 +247,7 @@ export default class StreamGraph extends Component {
     }
     drawScale(){
         this.setState({'logScale': !this.state.logScale})
-        var y = this.state.yLinear;
+        let y = this.state.yLinear;
         if(this.state.logScale) y = this.state.yLog;
         this.state.yAxis.scale(y);
 
@@ -271,25 +270,25 @@ export default class StreamGraph extends Component {
             .attr('d', d => this.state.streamArea(d))
     }
     drawLegend() {
-        var defs = this.state.svg.append('defs');
+        const defs = this.state.svg.append('defs');
 
-        var gradient = defs.append('linearGradient')
+        const gradient = defs.append('linearGradient')
             .attr('id', 'legend-grad')
             .attr('x1', '0%')
             .attr('x2', '100%')
             .attr('y1', '0%')
             .attr('y2', '0%');
 
-        for(var i = 0; i <= 10; i++){
+        for(let i = 0; i <= 10; i++){
             gradient.append('stop')
                 .attr('offset', `${i*10}%`)
                 .attr('stop-color', this.state.cs(1-i/10)) // d3.interpolateRdYlGn(1-i/10))
                 .attr('stop-opacity', 1);
         }
 
-        var legend = this.state.svg.append('g')
-            .attr('id','legend')
-            .attr('transform', `translate(${(this.state.width/2)-150},${this.state.height+65})`)
+        const legend = this.state.svg.append('g')
+            .attr('id', 'legend')
+            .attr('transform', `translate(${(this.state.width / 2) - 150},${this.state.height + 65})`);
         legend.append('rect')
             .attr('width',300)
             .attr('height',15)
@@ -300,17 +299,17 @@ export default class StreamGraph extends Component {
             .attr('width',300)
             .text('Case Fatality Rate');
 
-        var lScale = scaleLinear()
+        const lScale = scaleLinear()
             .range([0, 300])
-            .domain([0.0,0.1]);
+            .domain([0.0, 0.1]);
 
-        var lAxis = axisBottom(lScale)
-            .tickSize(18,0)
+        const lAxis = axisBottom(lScale)
+            .tickSize(18, 0)
             .tickFormat(format('.1%'));
 
-        var l2 = this.state.svg.append('g')
+        const l2 = this.state.svg.append('g')
             .attr('class', 'legend-axis axis')
-            .attr('transform', `translate(${(this.state.width/2)-150},${this.state.height+65})`)
+            .attr('transform', `translate(${(this.state.width / 2) - 150},${this.state.height + 65})`)
             .call(lAxis);
 
         l2.selectAll('path')
@@ -320,23 +319,23 @@ export default class StreamGraph extends Component {
         this.setState({'mouseX':e.nativeEvent.offsetX});
     }
     updateTooltip(country) {
-        var date = roundDate(this.state.x.invert(this.state.mouseX - this.state.margin.left));
-        var val;
+        const date = roundDate(this.state.x.invert(this.state.mouseX - this.state.margin.left));
+        let val;
         country.d.values.forEach(el => {
             if(el.date.getTime() === date.getTime()){
                 val = el;
             }
         })
 
-        var current = format(',')(val.current_cases);
-        var deaths = format(',')(val.deaths);
-        var recoveries = format(',')(val.recovered);
-        var fatality_rate = format('.1%')(val.fatality_rate);
-        var day = timeFormat('%m/%d/%y')(val.date);
-        var n = country.d.key;
+        const current = format(',')(val.current_cases);
+        const deaths = format(',')(val.deaths);
+        const recoveries = format(',')(val.recovered);
+        const fatality_rate = format('.1%')(val.fatality_rate);
+        const day = timeFormat('%m/%d/%y')(val.date);
+        const n = country.d.key;
 
-        var tooltip = this.state.svg.selectAll('.stream-tooltip')
-            .data([n,day,`current cases: ${current}`,`deaths: ${deaths}`,`recoveries: ${recoveries}`,`CFR: ${fatality_rate}`]);
+        const tooltip = this.state.svg.selectAll('.stream-tooltip')
+            .data([n, day, `current cases: ${current}`, `deaths: ${deaths}`, `recoveries: ${recoveries}`, `CFR: ${fatality_rate}`]);
         tooltip.style('visibility', 'visible')
             .attr('opacity',1)
             .text(d => d);
@@ -350,7 +349,7 @@ export default class StreamGraph extends Component {
             .text(d => d);
 
         function roundDate(timeStamp){
-            var d = new Date(timeStamp);
+            const d = new Date(timeStamp);
             d.setHours(0);
             d.setMinutes(0);
             d.setSeconds(0);

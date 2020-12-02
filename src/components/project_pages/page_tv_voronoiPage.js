@@ -8,6 +8,8 @@ function TVVoronoiPage(){
             <div id="voronoi-div" className="row project-detail">
                 <ProjectVisualizationMaster
                     title="VoronoiGraph Diagram"
+                    next_page="/stream_graph"
+                    prev_page="/recommendation_engine"
                     tools="React & D3.js"
                     visualizationComponent=<VoronoiGraph size={[500,500]}/>
                 description=

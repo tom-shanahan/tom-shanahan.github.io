@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink, Route, Switch} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import ProjectsPage from "./ProjectsPage";
