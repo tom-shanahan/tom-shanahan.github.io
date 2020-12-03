@@ -167,7 +167,7 @@ export default class StreamGraph extends Component {
             const dailyValues = short.map(country => country.values);
             const zipped = zip(dailyValues);
             const stackKeys = zipped[0].map(country => country.key.replace(/[^A-Za-z]/g, ''));
-            const singleDayMax = 0;
+            let singleDayMax = 0;
 
             const recombined = zipped.map(oneDay => {
                 const dayDict = {};
