@@ -8,7 +8,7 @@ function MapReducePage(){
             <div className="row project-detail">
                 <ProjectDescriptionMaster
                     title="MapReduce"
-                    next_page="facial_recog"
+                    next_page="recommendation_engine"
                     prev_page="area_bump"
                     tools="C/C++"
                     html_location="None"

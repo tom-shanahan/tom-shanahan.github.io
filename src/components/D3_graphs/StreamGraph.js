@@ -14,7 +14,7 @@ import { timeFormat, timeParse } from 'd3-time-format'
 import { transition } from 'd3-transition'
 import loadedData from '../../assets/data/StreamChartData.json'
 
-export default class StreamGraph extends Component {
+class StreamGraph extends Component {
     constructor(props){
         super(props)
         this.createStreamGraph = this.createStreamGraph.bind(this);
@@ -47,7 +47,6 @@ export default class StreamGraph extends Component {
         const node = this.node;
         const that = this.state;
 
-        // Streamgraph starts here
         const margin = {top: 20, right: 50, bottom: 100, left: 30};
         const width = this.props.size[0] - margin.left - margin.right;
         const height = this.props.size[1] - margin.top - margin.bottom;
@@ -67,7 +66,6 @@ export default class StreamGraph extends Component {
             .interpolate(interpolateRgb)
             .range([rgb('#cc0000'),rgb('#f9f7ae'),rgb('#006837')]);
 
-        //prepare data
         const parseTime = timeParse('%m/%d/%y');
         function formatDate (d) {
             d.date = parseTime(d.date);
@@ -79,7 +77,6 @@ export default class StreamGraph extends Component {
         const yAxisBuffer = singleDayMax.toString().length*6;
         const activeWidth = width - yAxisBuffer;
 
-        // axis
         that.x = scaleTime()
             .domain(extent(loadedData, d => d.date))
             .range([0, activeWidth])
@@ -109,7 +106,6 @@ export default class StreamGraph extends Component {
             .attr('class', 'y axis')
             .attr('transform', `translate(${activeWidth + 10}, 0)`);
 
-        // clipping paths
         that.svg.append('defs')
             .append('clipPath')
             .attr('id', 'clip')
@@ -119,7 +115,6 @@ export default class StreamGraph extends Component {
             .attr('x', 0)
             .attr('y', 0);
 
-        // Draw the data
         that.streamArea = area()
             .curve(curveCardinal)
             .x(d => that.x(d.data.date));
@@ -148,7 +143,6 @@ export default class StreamGraph extends Component {
             const full = nestAndSort(loadedData);
             const short = nestAndSort(loadedData);
 
-            //remove data
             const l = short.length;
             for(let j = 0; j < l; j++){
                 const vals = short[j].values;
@@ -160,10 +154,8 @@ export default class StreamGraph extends Component {
                 }
             }
 
-            //populate gradients
             populateGradients(full);
 
-            //order for
             const dailyValues = short.map(country => country.values);
             const zipped = zip(dailyValues);
             const stackKeys = zipped[0].map(country => country.key.replace(/[^A-Za-z]/g, ''));
@@ -377,3 +369,5 @@ export default class StreamGraph extends Component {
         )
     }
 }
+
+export default StreamGraph;

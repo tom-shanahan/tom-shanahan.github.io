@@ -27,70 +27,47 @@ function ProjectsPage(){
                     >
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
-                                title="Visualizing Correlations"
+                                title="Approximating Images with Random Forests"
+                                project_page="forest_image"
+                                img='/images/forest_image.png'
+                                tools="Python, Pandas, Matplotlib, Numpy, & Scikit-learn"
+                                code_link="None"
+                                data_link="None"
+                                shortDescription="
+                                This project uses random forest regression to approximate an image by learning a function that takes image coordinates and outputs pixel brightness. It learns to approximate areas of the image that it has not seen before.
+                                "
+                            />
+                        </Grid>
+                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <ProjectCard
+                                title="Visualizing Correlations with Interactive Graph"
                                 project_page="/tv_voronoi"
                                 img='/images/tv_corr.PNG'
                                 tools="React & D3.js"
-                                code_link="tom-shanahan.github.io/blob/master/src/components/VoronoiGraph.js"
+                                code_link="tom-shanahan.github.io/blob/master/src/components/D3_graphs/VoronoiGraph.js"
                                 data_link="https://colab.research.google.com/drive/1JNnXVkwvR1CrOsiIdwod2ZwVKtGYaWqt?usp=sharing"
                                 shortDescription="Exploring a television show recommendation engine using a dynamic Voronoi Graph.
                                 Visualizing complex, high-dimensional data can often be challenging. This graphic helps bring to
                                 life the many correlations between individual shows viewership. "
                             />
                         </Grid>
-                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                            <ProjectCard
-                                title="Visualizing Data with Stream Graph"
-                                project_page="stream_graph"
-                                img='/images/stream.png'
-                                tools="React & D3.js"
-                                code_link="tom-shanahan.github.io/blob/master/src/components/StreamGraph.js"
-                                data_link="https://colab.research.google.com/drive/1lRCAhOrRBCW8YIJZ4jkjv4A4K1JK5m2s?usp=sharing"
-                                shortDescription="
-                                This dynamic graphic utilizes the D3.js library to track country-level COVID-19 cases and fatality rates over time.
-                                The visualization allows for user interaction to explore and understand the data.
-                                "
-                            />
-                        </Grid>
-                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                            <ProjectCard
-                                title="Visualizing Data with Area Bump Chart"
-                                project_page="area_bump"
-                                img='/images/bump.png'
-                                tools="React & D3.js"
-                                code_link="tom-shanahan.github.io/blob/master/src/components/AreaBumpGraph.js"
-                                data_link='https://colab.research.google.com/drive/1BYTmrtlquchTl7eTeBpWeYPnctlUDsjg?usp=sharing'
-                                shortDescription="
-                                This dynamic graphic utilizes the D3.js library to track the global share of COVID-19 cases and fatalities by country.
-                                The visualization allows for user interaction to explore and understand the data.
-                                "
-                            />
-                        </Grid>
                         {/*<Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">*/}
                         {/*    <ProjectCard*/}
-                        {/*        title="Machine Learning"*/}
-                        {/*        project_page="/facial_recog"*/}
-                        {/*        img='/images/machine_learning.png'*/}
+                        {/*        title="Visualizing Data with Stream Graph"*/}
+                        {/*        project_page="stream_graph"*/}
+                        {/*        img='/images/stream.png'*/}
                         {/*        tools="React & D3.js"*/}
-                        {/*        code_link="Machine-Learning-Projects"*/}
-                        {/*        data_link="None"*/}
-                        {/*        shortDescription="Collection of machine learning projects utilizing Pandas, NumPy, Scikit-Learn, and more."*/}
+                        {/*        code_link="tom-shanahan.github.io/blob/master/src/components/D3_graphs/StreamGraph.js"*/}
+                        {/*        data_link="https://colab.research.google.com/drive/1lRCAhOrRBCW8YIJZ4jkjv4A4K1JK5m2s?usp=sharing"*/}
+                        {/*        shortDescription="*/}
+                        {/*        This dynamic graphic utilizes the D3.js library to track country-level COVID-19 cases and fatality rates over time.*/}
+                        {/*        The visualization allows for user interaction to explore and understand the data.*/}
+                        {/*        "*/}
                         {/*    />*/}
                         {/*</Grid>*/}
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
-                                title="MapReduce Implementation"
-                                project_page="/map_reduce"
-                                img='/images/mapReduce.png'
-                                tools="C/C++"
-                                code_link="MapReduce-Implementation"
-                                data_link='None'
-                                shortDescription="Hadoop-like MapReduce implementation for operations over large datasets. Fault tolerant implementation successfully and rapidly processed hundreds of files with billions of records."
-                            />
-                        </Grid>
-                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                            <ProjectCard
-                                title="Recognizing Faces"
+                                title="Recognizing Faces with SVD"
                                 project_page="facial_recog"
                                 img='/images/facial_recog.png'
                                 tools="Python, Numpy, Scikit-learn, SciPy, & Matplotlib"
@@ -105,30 +82,44 @@ function ProjectsPage(){
                         </Grid>
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
-                                title="Recognizing Digits"
+                                title="Recognizing Digits with K-NN"
                                 project_page="digit_recog"
                                 img='/images/digit_recog.png'
                                 tools="Python, Pandas, Matplotlib, Numpy, & Scikit-learn"
                                 code_link="None"
                                 data_link="None"
                                 shortDescription="
-                                In this project, I used a k-nearest neighbors algorithm to classify digits. Utilizing 3-fold cross-validation on the
-                                K-NN classifier, I achieved an accuracy of 97%. To evaluate my results, I used an ROC curve and confusion matrix.
+                                This project used a k-nearest neighbors algorithm to classify digits. Utilizing 3-fold cross-validation, I achieved an accuracy of 97%. To evaluate my results, I used an ROC curve and confusion matrix.
+                                "
+                            />
+                        </Grid>
+
+                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <ProjectCard
+                                title="Visualizing Data with Area Bump Chart"
+                                project_page="area_bump"
+                                img='/images/bump.png'
+                                tools="React & D3.js"
+                                code_link="tom-shanahan.github.io/blob/master/src/components/D3_graphs/AreaBumpGraph.js"
+                                data_link='https://colab.research.google.com/drive/1BYTmrtlquchTl7eTeBpWeYPnctlUDsjg?usp=sharing'
+                                shortDescription="
+                                This dynamic graphic utilizes the JavaScript D3.js library to track the global share of COVID-19 cases and fatalities by country.
+                                The visualization allows user to interaction with and toggle the data facilitating exploration and understanding.
                                 "
                             />
                         </Grid>
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
-                                title="Approximating Images with Random Forests"
-                                project_page="forest_image"
-                                img='/images/forest_image.png'
-                                tools="Python, Pandas, Matplotlib, Numpy, & Scikit-learn"
-                                code_link="None"
-                                data_link="None"
+                                title="Parallel Computing with MapReduce"
+                                project_page="/map_reduce"
+                                img='/images/mapReduce.png'
+                                tools="C/C++"
+                                code_link="MapReduce-Implementation"
+                                data_link='None'
                                 shortDescription="
-                                This project uses random forest regression to approximate an image by learning a function that takes image coordinates and outputs pixel brightness. It learns to approximate areas of the image that it has not seen before.
+                                This Hadoop-like MapReduce implementation can perform word counting and numerical sorting of large datasets quickly
+                                and efficiently. The fault tolerance implementation was able to successfully and rapidly process hundreds of files with billions of records.
                                 "
-
                             />
                         </Grid>
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">

@@ -6,10 +6,9 @@ function FacialRecogPage(){
         <div className="container">
             <div className="row project-detail">
                 <ProjectDescriptionMaster
-                    // style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
                     title="Facial Recognition"
                     next_page="digit_recog"
-                    prev_page="map_reduce"
+                    prev_page="tv_voronoi"
                     tools="Python, Numpy, Scikit-learn, SciPy, & Matplotlib"
                     html_location="/facial_recog.html"
                     description=""
