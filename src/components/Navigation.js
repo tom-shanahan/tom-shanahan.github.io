@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch} from 'react-router-dom';
+import { Link, Route, Switch, Redirect } from 'react-router-dom';
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import ProjectsPage from "./ProjectsPage";
@@ -54,8 +54,8 @@ const Navigation = () => {
                     <ContactPage />
                 </Route>
                 <Route path='/coloration' component={() => {
-                    window.location.replace('http://tom-shanahan.github.io/coloration');
-                    return null;
+                    window.open('http://tom-shanahan.github.io/coloration','_blank');
+                    return <Redirect to='/projects' />;
                 }}/>
             </Switch>
         </div>
