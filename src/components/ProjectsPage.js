@@ -27,6 +27,22 @@ function ProjectsPage(){
                     >
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
+                                title="Coloration: React App for Choosing Colors"
+                                project_page="coloration"
+                                img='/images/coloration.png'
+                                tools="React, Javascript, & HTML"
+                                code_link="coloration"
+                                data_link="None"
+                                shortDescription="
+                                I created this React app to help with choosing colors. As someone with red-green color blindness,
+                                I often find it challenging pairing colors. This tool makes use of color theory to suggest groups
+                                of colors that pair well with user-selected colors.
+                                "
+                            />
+                        </Grid>
+
+                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <ProjectCard
                                 title="Approximating Images with Random Forests"
                                 project_page="forest_image"
                                 img='/images/forest_image.png'

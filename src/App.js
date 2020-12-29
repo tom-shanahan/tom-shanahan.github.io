@@ -9,7 +9,6 @@ import Navigation from "./components/Navigation";
 import Header from "./components/Header";
 
 class App extends React.Component {
-
     render(){
         return (
             <BrowserRouter>

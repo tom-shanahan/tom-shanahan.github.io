@@ -53,6 +53,10 @@ const Navigation = () => {
                 <Route path='/contact'>
                     <ContactPage />
                 </Route>
+                <Route path='/coloration' component={() => {
+                    window.location.replace('http://tom-shanahan.github.io/coloration');
+                    return null;
+                }}/>
             </Switch>
         </div>
     );
