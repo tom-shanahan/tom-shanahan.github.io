@@ -57,6 +57,10 @@ const Navigation = () => {
                     window.open('http://tom-shanahan.github.io/coloration','_blank');
                     return <Redirect to='/projects' />;
                 }}/>
+                <Route path='/chrome_extension' component={() => {
+                    window.open('https://chrome.google.com/webstore/detail/multi-inbox-checker/ogogkkmiieflnmchmndkknkjpgipldni?hl=en','_blank');
+                    return <Redirect to='/projects' />;
+                }}/>
             </Switch>
         </div>
     );

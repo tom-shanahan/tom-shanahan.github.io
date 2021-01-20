@@ -27,6 +27,22 @@ function ProjectsPage(){
                     >
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
+                                title="Multi-Inbox Checker: Extension for Chrome"
+                                project_page="chrome_extension"
+                                img='/images/chrome_extension.png'
+                                tools="Javascript & HTML"
+                                code_link="Multi-Inbox-Checker"
+                                data_link="None"
+                                shortDescription="
+                                I created this Chrome Extension to manage multiple Gmail accounts.
+                                Existing Extensions didn't satisfy my need for a simple tool
+                                to display unread email counts for both my work and personal accounts.
+                                This will toggle count badges at a user-selected interval.
+                                "
+                            />
+                        </Grid>
+                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <ProjectCard
                                 title="Coloration: React App for Choosing Colors"
                                 project_page="coloration"
                                 img='/images/coloration.png'
@@ -40,7 +56,6 @@ function ProjectsPage(){
                                 "
                             />
                         </Grid>
-
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
                                 title="Approximating Images with Random Forests"
