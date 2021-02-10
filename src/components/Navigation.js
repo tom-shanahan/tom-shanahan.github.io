@@ -11,6 +11,7 @@ import MapReducePage from "./project_pages/MapReducePage";
 import DigitRecogPage from "./project_pages/DigitRecognizerPage";
 import ForestImagePage from "./project_pages/ForestImagePage";
 import RecommendEnginePage from "./project_pages/RecommendEnginePage";
+import TripOriginPage from "./project_pages/TripOriginPage";
 import ContactPage from "./ContactPage";
 
 const Navigation = () => {
@@ -46,6 +47,9 @@ const Navigation = () => {
                 </Route>
                 <Route path='/forest_image'>
                     <ForestImagePage />
+                </Route>
+                <Route path='/trip_origin'>
+                    <TripOriginPage />
                 </Route>
                 <Route path='/recommendation_engine'>
                     <RecommendEnginePage />

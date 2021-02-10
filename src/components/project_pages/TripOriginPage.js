@@ -1,21 +1,22 @@
 import React from "react";
 import ProjectDescriptionMaster from "../ProjectDescriptionMaster";
 
-function RecommendEnginePage(){
+function TripOrigin(){
     return (
         <div className="container">
             <div className="row project-detail">
                 <ProjectDescriptionMaster
                     // style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
-                    title="Recommendation Engine"
-                    next_page="trip_origin"
-                    prev_page="map_reduce"
-                    tools="Python, Pandas, Matplotlib, Numpy, SciPy, & Scikit-learn"
-                    html_location="/recommendation_engine.html"
+                    title="Geodata Analysis: Calculating Trip Counts"
+                    next_page="forest_image"
+                    prev_page="recommendation_engine"
+                    tools="Python, Pandas, & Geopandas"
+                    html_location="/trip_origin.html"
                     description=""
                 />
+
             </div>
         </div>
     );
 }
-export default RecommendEnginePage;
+export default TripOrigin;

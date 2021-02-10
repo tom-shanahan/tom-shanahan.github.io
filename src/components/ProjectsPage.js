@@ -27,6 +27,22 @@ function ProjectsPage(){
                     >
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
+                                title="Geodata Analysis: Calculating Trip Counts"
+                                project_page="trip_origin"
+                                img='/images/trip_origins.png'
+                                tools="Python, Pandas, & Geopandas"
+                                code_link="None"
+                                data_link="None"
+                                shortDescription="
+                                This project estimates the number of trips originating from a geographic
+                                catchment area. Utilizing Census Tract level data, I found the intersection
+                                of various shape files overlaid over one another. With the geographies of
+                                these new shapes, I approximated counts.
+                                "
+                            />
+                        </Grid>
+                        <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <ProjectCard
                                 title="Multi-Inbox Checker: Extension for Chrome"
                                 project_page="chrome_extension"
                                 img='/images/chrome_extension.png'
