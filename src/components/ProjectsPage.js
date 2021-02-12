@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 function ProjectsPage(){
     return (
-        <div className="vertical-center" style={{marginTop:'40px',marginBottom:'40px'}} data-aos="fade-up">
+        <div className="vertical-center" style={{marginTop:'40px',marginBottom:'40px'}}>
             <div className="container">
                 <div className="row justify-content-start align-items-center">
                     <div className="col-lg-12">
@@ -36,8 +36,7 @@ function ProjectsPage(){
                                 shortDescription="
                                 This project estimates the number of trips originating from a geographic
                                 catchment area. Utilizing Census Tract level data, I found the intersection
-                                of various shape files overlaid over one another. With the geographies of
-                                these new shapes, I approximated counts.
+                                of various shape and used the geographies of these new shapes, to approximate counts.
                                 "
                             />
                         </Grid>
@@ -81,7 +80,9 @@ function ProjectsPage(){
                                 code_link="None"
                                 data_link="None"
                                 shortDescription="
-                                This project uses random forest regression to approximate an image by learning a function that takes image coordinates and outputs pixel brightness. It learns to approximate areas of the image that it has not seen before.
+                                This project uses random forest regression to approximate an image based on a small
+                                subset set of the image's pixels. The function &quot;learns&quot; what images &quot;should&quot;
+                                look like based on a training set of images.
                                 "
                             />
                         </Grid>
@@ -164,8 +165,9 @@ function ProjectsPage(){
                                 code_link="MapReduce-Implementation"
                                 data_link='None'
                                 shortDescription="
-                                This Hadoop-like MapReduce implementation can perform word counting and numerical sorting of large datasets quickly
-                                and efficiently. The fault tolerance implementation was able to successfully and rapidly process hundreds of files with billions of records.
+                                This Hadoop-like implementation of MapReduce can perform word counting and numerical
+                                sorting for large datasets efficiently and with fault tolerance. It was able to successfully and
+                                rapidly process hundreds of files with billions of records.
                                 "
                             />
                         </Grid>

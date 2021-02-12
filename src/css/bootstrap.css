@@ -4185,9 +4185,10 @@ input[type=submit].btn-block {
 
 .navbar-toggler {
     color: whitesmoke!important;
-    background-color: whitesmoke!important;
-    border-color: whitesmoke!important;
+    /*background-color: whitesmoke!important;*/
+    /*border-color: whitesmoke!important;*/
     margin-right: auto!important;
+    margin-left: 5vw;
 }
 
 .navbar>.container,

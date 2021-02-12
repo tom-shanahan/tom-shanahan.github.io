@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 
 function AboutPage() {
     return (
-        <div className="vertical-center" data-aos="fade-up">
+        <div className="vertical-center">
             {/*<span id="about" className="anchor"></span>*/}
             <div className="container">
                 <div className="row justify-content-start align-items-center">

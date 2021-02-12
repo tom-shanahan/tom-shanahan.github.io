@@ -5,7 +5,7 @@ import AOS from '../../node_modules/aos/dist/aos';
 
 function ContactPage(){
     return(
-        <div className="vertical-center" data-aos="fade-up">
+        <div className="vertical-center">
             <div className="container">
                 <div className="main_title text-left">
                     <p className="top_text">Contact me <span></span></p>
