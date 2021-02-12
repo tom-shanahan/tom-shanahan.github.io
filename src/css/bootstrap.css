@@ -4090,7 +4090,12 @@ input[type=submit].btn-block {
     display: block;
     padding: .5rem 1rem;
     float:left;
-    margin-left: 5vw;
+}
+
+@media screen and (max-width: 992px) {
+    .nav-link {
+        margin-left: 5vw;
+    }
 }
 
 .nav-link:focus,
