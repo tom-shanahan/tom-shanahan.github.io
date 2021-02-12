@@ -104,9 +104,9 @@ a{
 
 @media (min-width: 768px) {
     .navbar{
-        text-align: center !important;
-        float: none;
-        display: inline-block;
+        /*text-align: center !important;*/
+        float: left;
+        /*display: inline-block;*/
     }
 }
 
