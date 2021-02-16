@@ -6,7 +6,6 @@ import { Delaunay } from "d3-delaunay"
 import { interpolateRgb } from 'd3-interpolate'
 import { scaleLinear} from 'd3-scale'
 import { select } from 'd3-selection'
-import { transition } from 'd3-transition'
 import loadedData from '../../assets/data/voronoi.json'
 
 export default class VoronoiGraph extends Component {
@@ -32,12 +31,11 @@ export default class VoronoiGraph extends Component {
     const that = this;
     const node = this.node;
 
-    const margin = {top: 75, right: 75, bottom: 75, left: 75};
-    const width = this.props.size[0] - margin.left - margin.right;
-    const height = this.props.size[1] - margin.top - margin.bottom;
+    const margin = {top: Math.max(window.innerHeight*.03,50), right: window.innerWidth*.03, bottom: window.innerHeight*.03, left: window.innerWidth*.03};
+    const sideDimension = this.props.size - margin.top;
 
     that.state.genreColor = loadedData.map(d => d.color);
-    that.state.pts = loadedData.map(d => [d.tsneCoordinatesNormalized[0]*height,d.tsneCoordinatesNormalized[1]*width]);
+    that.state.pts = loadedData.map(d => [d.tsneCoordinatesNormalized[0]*sideDimension,d.tsneCoordinatesNormalized[1]*sideDimension]);
     const xv = extent(that.state.pts.map(d => d[0]));
     const yv = extent(that.state.pts.map(d => d[1]));
     console.log(xv);
@@ -47,10 +45,10 @@ export default class VoronoiGraph extends Component {
 
     that.state.svg = select(node)
          .attr("id","voronoi-svg")
-         .attr("width", this.props.size[0])
-         .attr("height", this.props.size[1])
+         .attr("width", sideDimension)
+         .attr("height", this.props.size)
          .append("g")
-         .attr("transform", `translate(${margin.left},${margin.top})`);
+         .attr("transform", `translate(0,${margin.top})`);
 
     that.state.g = that.state.svg.append("g")
         .attr("id","voronoi-group");
@@ -124,11 +122,8 @@ export default class VoronoiGraph extends Component {
 
   render() {
     return (
-      <div>
-        <svg
-          ref={node => this.node = node}
-          width={this.props.size[0]}
-          height={this.props.size[1]}>
+      <div className='align-items-center'>
+        <svg ref={node => this.node = node}>
         </svg>
       </div>
     )

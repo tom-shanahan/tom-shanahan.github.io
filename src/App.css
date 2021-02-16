@@ -101,12 +101,8 @@
 }
 
 .project-detail {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.viz-div {
-  display: flex;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
 .project-card {
@@ -216,6 +212,26 @@
 .vertical-center {
   min-height: 100%;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align : center;
+  -webkit-align-items : center;
+  -moz-box-align : center;
+  -ms-flex-align : center;
+  align-items : center;
+  width: 100%;
+  -webkit-box-pack : center;
+  -moz-box-pack : center;
+  -ms-flex-pack : center;
+  -webkit-justify-content : center;
+  justify-content : center;
+}
+
+
+.horizontal-center {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;

@@ -11,7 +11,6 @@ import { select } from 'd3-selection'
 import { area, curveCardinal, stack } from 'd3-shape'
 import {timeMonth, timeWeek} from 'd3-time'
 import { timeFormat, timeParse } from 'd3-time-format'
-import { transition } from 'd3-transition'
 import loadedData from '../../assets/data/StreamChartData.json'
 
 class StreamGraph extends Component {

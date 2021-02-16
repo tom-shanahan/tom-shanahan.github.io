@@ -41,17 +41,17 @@ export default class ProjectVisualizationMaster extends Component {
                         </button>
                     </Link>
                 </div>
-                <Grid container
-                      spacing={0}
-                      direction="row"
-                      justify="center"
-                      alignItems="center"
-                >
+                <Grid container>
                     <Grid item xs>
-                        {this.props.visualizationComponent}
+                        <div className='horizontal-center'>
+                            {this.props.visualizationComponent}
+                        </div>
+                        <div className='horizontal-center'>
+                            <p style={{'width':Math.min(window.innerWidth * 0.7,window.innerHeight * 0.5)}} dangerouslySetInnerHTML={{__html: this.props.visualizationNotes}} />
+                        </div>
                     </Grid>
-                    <Grid item xs style={{'margin':'25px'}}>
-                        <h2 className=".viz-div">
+                    <Grid item xs style={{'margin':'3vh'}}>
+                        <h2>
                             {this.props.title}
                         </h2>
                         <b>

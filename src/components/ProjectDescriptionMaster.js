@@ -25,6 +25,7 @@ export default class ProjectDescriptionMaster extends Component {
             html_frame =
                 <div id="stream-div" className="row project-detail">
                     <iframe
+                        title={this.props.title}
                         src={this.props.html_location}
                         width="100%"
                         height="600px"
