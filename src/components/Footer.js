@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import {Nav} from "react-bootstrap";
 
 function Footer(){
     return (
@@ -10,7 +11,7 @@ function Footer(){
             <div className="footer_s mb-4 mt-4">
                 <a href="https://www.linkedin.com/in/tshanahan1/" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faLinkedin}/></a>
                 <a href="https://github.com/tom-shanahan" target='_blank' rel='noopener noreferrer'><FontAwesomeIcon icon={faGithub} /></a>
-                <a href="/contact" ><FontAwesomeIcon icon={faEnvelope} /></a>
+                <Link to='/contact'><FontAwesomeIcon icon={faEnvelope} /></Link>
             </div>
             <div className='footer_s mb-4 mt-4'>
                 <p className='text-white'>Created with React & Github Pages</p>

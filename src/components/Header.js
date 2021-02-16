@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import { Nav, Navbar} from 'react-bootstrap';
-import {faBars} from "@fortawesome/free-solid-svg-icons";
+import {faBars, faWindowClose} from "@fortawesome/free-solid-svg-icons";
 import '../css/header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -20,6 +20,9 @@ function Header(){
                     <Link className='nav-item nav-link hoverable' to='/projects'>Projects</Link>
                     <Link className='nav-item nav-link hoverable' to='/contact'>Contact</Link>
                 </Nav>
+                <Navbar.Toggle className="mt-0 mb-3">
+                    <FontAwesomeIcon icon={faWindowClose}/>
+                </Navbar.Toggle>
             </Navbar.Collapse>
         </Navbar>
     );
