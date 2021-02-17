@@ -9,7 +9,7 @@ import { interpolateRgb } from 'd3-interpolate'
 import { scaleLinear, scaleLog, scaleTime } from 'd3-scale'
 import { select } from 'd3-selection'
 import { area, curveCardinal, stack } from 'd3-shape'
-import {timeMonth, timeWeek} from 'd3-time'
+import {timeMonth} from 'd3-time'
 import { timeFormat, timeParse } from 'd3-time-format'
 import loadedData from '../../assets/data/StreamChartData.json'
 

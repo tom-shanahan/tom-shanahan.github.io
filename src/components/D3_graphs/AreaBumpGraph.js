@@ -7,10 +7,11 @@ import { format } from 'd3-format'
 import { scaleLinear, scaleTime } from 'd3-scale'
 import { select } from 'd3-selection'
 import { area, curveBasis } from 'd3-shape'
-import {timeMonth, timeWeek} from 'd3-time'
-import { timeParse } from 'd3-time-format'
+import { timeMonth, timeYear } from 'd3-time'
+import {timeFormat, timeParse} from 'd3-time-format'
 import { transition } from 'd3-transition'
 import loadedData from '../../assets/data/area_bump.json'
+// TODO: switch data load to api call
 
 export default class AreaBump extends Component {
   constructor(props){
@@ -57,12 +58,20 @@ export default class AreaBump extends Component {
     ,"Austria":"teal"
     ,"Belgium":"brown"
     ,"All Other":"lightgray"
-    ,"India":"orange"
+    ,"India":"red"
     };
 
-    that.margin = {top: 10, right: 75, bottom: 30, left: 20};
-    const width = 750 - that.margin.left - that.margin.right;
-    const height = 500 - that.margin.top - that.margin.bottom;
+    let marginRight = window.innerWidth*.1325
+    if (window.innerWidth > 1000){
+      marginRight = window.innerWidth*.05
+    }
+    else if (window.innerWidth > 800){
+      marginRight = window.innerWidth*.09
+    }
+
+    that.margin = {top: window.innerHeight*.01, right: marginRight, bottom: window.innerHeight*.03, left: window.innerWidth*.03};
+    const width = this.props.size - that.margin.right;
+    const height = width*(2/3);
 
     that.svg = select(node)
       .attr("id","bump-svg")
@@ -79,7 +88,7 @@ export default class AreaBump extends Component {
 
     const xAxis = axisBottom()
       .scale(that.x)
-      .ticks(timeMonth);
+      .ticks(timeMonth, 1).tickFormat(timeFormat('%b'));
 
     that.svg.append("g")
       .attr("class", "x-bump axis")
@@ -98,7 +107,7 @@ export default class AreaBump extends Component {
 
     that.svg.append("g")
         .attr("class", "y-bump axis")
-        .attr("transform", `translate(${width+10}, 0)`)
+        .attr("transform", `translate(${width+5}, 0)`)
         .transition("axis")
         .duration(1000)
         .call(yAxis);
@@ -140,7 +149,6 @@ export default class AreaBump extends Component {
 
   drawData() {
     this.toggleType();
-    const that = this;
     const layers = prepareData(loadedData,this.state.showCases,this.state.showGlobal);
     var countries = this.state.svg.selectAll(`.areaBumpLayers`)
       .data(layers, d => d.key);
@@ -281,15 +289,19 @@ export default class AreaBump extends Component {
     }
 
     return (
-      <div className= 'viz-container'>
-        <p className='viz-title' id='chart-title'>{chartTitle}</p>
-        <svg
-            onMouseMove={this.onMouseMove}
-            ref={node => this.node = node}
-            width={this.props.size[0]}
-            height={this.props.size[1]}>
-        </svg>
-        <div className='button-container'>
+      <div className='align-content-center align-items-center'>
+        <div className='horizontal-center'>
+          <p className='viz-title' id='chart-title'>{chartTitle}</p>
+        </div>
+        <div className='horizontal-center'>
+          <svg
+              onMouseMove={this.onMouseMove}
+              ref={node => this.node = node}
+              width={this.props.size}
+              height={this.props.size}
+          />
+        </div>
+        <div className='horizontal-center'>
           <button
               className='card-button chart-toggle'
               onClick={() => {

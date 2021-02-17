@@ -7,6 +7,7 @@ import { interpolateRgb } from 'd3-interpolate'
 import { scaleLinear} from 'd3-scale'
 import { select } from 'd3-selection'
 import loadedData from '../../assets/data/voronoi.json'
+// TODO: switch data load to api call
 
 export default class VoronoiGraph extends Component {
   constructor(props){

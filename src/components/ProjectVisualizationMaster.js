@@ -47,7 +47,7 @@ export default class ProjectVisualizationMaster extends Component {
                             {this.props.visualizationComponent}
                         </div>
                         <div className='horizontal-center'>
-                            <p style={{'width':Math.min(window.innerWidth * 0.7,window.innerHeight * 0.5)}} dangerouslySetInnerHTML={{__html: this.props.visualizationNotes}} />
+                            <p style={{'width':Math.min(window.innerWidth * 0.75,window.innerHeight * 0.55)}} dangerouslySetInnerHTML={{__html: this.props.visualizationNotes}} />
                         </div>
                     </Grid>
                     <Grid item xs style={{'margin':'3vh'}}>
