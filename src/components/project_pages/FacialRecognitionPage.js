@@ -4,7 +4,7 @@ import ProjectDescriptionMaster from "../ProjectDescriptionMaster";
 function FacialRecogPage(){
     return (
         <div className="container">
-            <div className="row project-detail">
+            <div className="project-detail align-items-center">
                 <ProjectDescriptionMaster
                     title="Facial Recognition"
                     next_page="digit_recog"

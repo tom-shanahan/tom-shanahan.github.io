@@ -101,6 +101,10 @@
 .project-detail {
   padding-top: 2vh;
   padding-bottom: 2vh;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px
 }
 
 .project-card {

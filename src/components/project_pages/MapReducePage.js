@@ -5,7 +5,7 @@ import Gist from "react-gist";
 function MapReducePage(){
     return (
         <div className="container">
-            <div className="row project-detail">
+            <div className="project-detail align-items-center">
                 <ProjectDescriptionMaster
                     title="MapReduce"
                     next_page="recommendation_engine"

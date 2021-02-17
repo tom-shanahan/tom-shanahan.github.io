@@ -5,7 +5,7 @@ import AreaBump from "../D3_graphs/AreaBumpGraph";
 function AreaBumpPage(){
     return (
         <div className="container">
-            <div id="bump-div" className="row project-detail">
+            <div className="project-detail align-items-center">
                 <ProjectVisualizationMaster
                     style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
                     title="Area Bump Chart"

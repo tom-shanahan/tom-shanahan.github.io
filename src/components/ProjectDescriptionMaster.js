@@ -9,21 +9,21 @@ import {Link} from "react-router-dom";
 import AOS from "aos";
 library.add(fab, fas, far, faLinkedin, faGithub,faChevronUp,faChevronLeft,faChevronRight)
 
-const useStyles = makeStyles({
-    root: {
-        maxWidth: 345,
-    },
-    media: {
-        height: 40,
-    },
-});
+// const useStyles = makeStyles({
+//     root: {
+//         maxWidth: 345,
+//     },
+//     media: {
+//         height: 40,
+//     },
+// });
 
 export default class ProjectDescriptionMaster extends Component {
     render() {
         let html_frame = <div/>;
         if (this.props.html_location !== "None") {
             html_frame =
-                <div id="stream-div" className="row project-detail">
+                <div className="row project-detail">
                     <iframe
                         title={this.props.title}
                         src={this.props.html_location}
@@ -35,39 +35,42 @@ export default class ProjectDescriptionMaster extends Component {
 
 
         return(
-            <Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}} data-aos="zoom-in">
-                <div>
-                    <Link to={this.props.next_page}>
-                        <button className="mdc-icon-button keyboard_arrow_up card-button">
-                            <FontAwesomeIcon icon={faChevronRight}/>
-                        </button>
-                    </Link>
-
-                    <Link to={{pathname: '/projects'}}>
-                        <button className="mdc-icon-button keyboard_arrow_up card-button">
-                            <FontAwesomeIcon icon={faChevronUp}/>
-                        </button>
-                    </Link>
-
-                    <Link to={this.props.prev_page}>
-                        <button className="mdc-icon-button keyboard_arrow_up card-button">
-                            <FontAwesomeIcon icon={faChevronLeft}/>
-                        </button>
-                    </Link>
-                </div>
-                <Grid item xs style={{'margin':'25px'}}>
-                    <h2>
-                        {this.props.title}
-                    </h2>
-                    <b>
-                        Created with {this.props.tools}
-                    </b>
+            <div>
+                <Card shadow={5} style={{width: '100%', margin: 'auto'}} data-aos="zoom-in">
+                {/*<Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}} data-aos="zoom-in">*/}
                     <div>
-                        <p dangerouslySetInnerHTML={{__html: this.props.description}} />
+                        <Link to={this.props.next_page}>
+                            <button className="mdc-icon-button keyboard_arrow_up card-button">
+                                <FontAwesomeIcon icon={faChevronRight}/>
+                            </button>
+                        </Link>
+
+                        <Link to={{pathname: '/projects'}}>
+                            <button className="mdc-icon-button keyboard_arrow_up card-button">
+                                <FontAwesomeIcon icon={faChevronUp}/>
+                            </button>
+                        </Link>
+
+                        <Link to={this.props.prev_page}>
+                            <button className="mdc-icon-button keyboard_arrow_up card-button">
+                                <FontAwesomeIcon icon={faChevronLeft}/>
+                            </button>
+                        </Link>
                     </div>
-                    {html_frame}
-                </Grid>
-            </Card>
+                    <Grid item xs style={{'margin':'25px'}}>
+                        <h2>
+                            {this.props.title}
+                        </h2>
+                        <b>
+                            Created with {this.props.tools}
+                        </b>
+                        <div>
+                            <p dangerouslySetInnerHTML={{__html: this.props.description}} />
+                        </div>
+                        {html_frame}
+                    </Grid>
+                </Card>
+            </div>
         )
     }
 }

@@ -5,7 +5,7 @@ import StreamGraph from "../D3_graphs/StreamGraph";
 function StreamGraphPage(){
     return (
         <div className="container">
-            <div id="stream-div" className="row project-detail">
+            <div className="project-detail align-items-center">
                 <ProjectVisualizationMaster
                     // TODO: Update recovered data
                     title="Ordered Stream Graph"

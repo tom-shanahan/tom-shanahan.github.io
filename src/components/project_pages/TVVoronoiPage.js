@@ -5,7 +5,7 @@ import VoronoiGraph from "../D3_graphs/VoronoiGraph";
 function TVVoronoiPage(){
     return (
         <div className="container">
-            <div id="voronoi-div" className="row project-detail">
+            <div className="project-detail align-items-center">
                 <ProjectVisualizationMaster
                     title="VoronoiGraph Diagram"
                     next_page="/facial_recog"

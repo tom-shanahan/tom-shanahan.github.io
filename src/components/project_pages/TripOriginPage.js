@@ -4,7 +4,7 @@ import ProjectDescriptionMaster from "../ProjectDescriptionMaster";
 function TripOrigin(){
     return (
         <div className="container">
-            <div className="row project-detail">
+            <div className="project-detail align-items-center">
                 <ProjectDescriptionMaster
                     // style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
                     title="Geodata Analysis: Calculating Trip Counts"
