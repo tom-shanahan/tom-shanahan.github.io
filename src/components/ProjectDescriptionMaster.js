@@ -35,7 +35,7 @@ export default class ProjectDescriptionMaster extends Component {
 
 
         return(
-            <div>
+            <div className='project-description'>
                 <Card shadow={5} style={{width: '100%', margin: 'auto'}} data-aos="zoom-in">
                 {/*<Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}} data-aos="zoom-in">*/}
                     <div>

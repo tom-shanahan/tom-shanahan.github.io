@@ -21,49 +21,52 @@ const useStyles = makeStyles({
 export default class ProjectVisualizationMaster extends Component {
     render() {
         return(
-            <Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}} data-aos="zoom-in">
-                <div style={{'buffer-top':'50px'}}>
-                    <Link to={this.props.next_page}>
-                        <button className="mdc-icon-button keyboard_arrow_up card-button">
-                            <FontAwesomeIcon icon={faChevronRight}/>
-                        </button>
-                    </Link>
+            <div className='project-description'>
 
-                    <Link to={{pathname: '/projects'}}>
-                        <button className="mdc-icon-button keyboard_arrow_up card-button">
-                            <FontAwesomeIcon icon={faChevronUp}/>
-                        </button>
-                    </Link>
+                <Card className={useStyles.root} shadow={5} style={{width: '100%', margin: 'auto'}} data-aos="zoom-in">
+                    <div style={{'buffer-top':'50px'}}>
+                        <Link to={this.props.next_page}>
+                            <button className="mdc-icon-button keyboard_arrow_up card-button">
+                                <FontAwesomeIcon icon={faChevronRight}/>
+                            </button>
+                        </Link>
 
-                    <Link to={this.props.prev_page}>
-                        <button className="mdc-icon-button keyboard_arrow_up card-button">
-                            <FontAwesomeIcon icon={faChevronLeft}/>
-                        </button>
-                    </Link>
-                </div>
-                <Grid container>
-                    <Grid item xs>
-                        <div className='horizontal-center'>
-                            {this.props.visualizationComponent}
-                        </div>
-                        <div className='horizontal-center'>
-                            <p style={{'width':Math.min(window.innerWidth * 0.75,window.innerHeight * 0.55)}} dangerouslySetInnerHTML={{__html: this.props.visualizationNotes}} />
-                        </div>
+                        <Link to={{pathname: '/projects'}}>
+                            <button className="mdc-icon-button keyboard_arrow_up card-button">
+                                <FontAwesomeIcon icon={faChevronUp}/>
+                            </button>
+                        </Link>
+
+                        <Link to={this.props.prev_page}>
+                            <button className="mdc-icon-button keyboard_arrow_up card-button">
+                                <FontAwesomeIcon icon={faChevronLeft}/>
+                            </button>
+                        </Link>
+                    </div>
+                    <Grid container>
+                        <Grid item xs>
+                            <div className='horizontal-center'>
+                                {this.props.visualizationComponent}
+                            </div>
+                            <div className='horizontal-center'>
+                                <p style={{'width':Math.min(window.innerWidth * 0.75,window.innerHeight * 0.55)}} dangerouslySetInnerHTML={{__html: this.props.visualizationNotes}} />
+                            </div>
+                        </Grid>
+                        <Grid item xs style={{'margin':'3vh'}}>
+                            <h2>
+                                {this.props.title}
+                            </h2>
+                            <b>
+                                Created with {this.props.tools}
+                            </b>
+                            <div>
+                                {/*Note:html allows for links*/}
+                                <p dangerouslySetInnerHTML={{__html: this.props.description}} />
+                            </div>
+                        </Grid>
                     </Grid>
-                    <Grid item xs style={{'margin':'3vh'}}>
-                        <h2>
-                            {this.props.title}
-                        </h2>
-                        <b>
-                            Created with {this.props.tools}
-                        </b>
-                        <div>
-                            {/*Note:html allows for links*/}
-                            <p dangerouslySetInnerHTML={{__html: this.props.description}} />
-                        </div>
-                    </Grid>
-                </Grid>
-            </Card>
+                </Card>
+            </div>
         )
     }
 }
