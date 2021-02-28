@@ -38,19 +38,19 @@ export default class ProjectCard extends Component {
                                 style={{'max-height':'200px','max-width':'325px','height':'auto','width':'auto','margin':0,'buffer':0}}
                             />
                         </CardMedia>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2" align={'center'}>
+                                {this.props.title}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {this.props.shortDescription}
+                            </Typography>
+                            <p className="half-line"></p>
+                            <Typography variant="subtitle2" color="textSecondary" align={'center'}>
+                                Created with {this.props.tools}
+                            </Typography>
+                        </CardContent>
                     </Link>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2" align={'center'}>
-                            {this.props.title}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            {this.props.shortDescription}
-                        </Typography>
-                        <p className="half-line"></p>
-                        <Typography variant="subtitle2" color="textSecondary" align={'center'}>
-                            Created with {this.props.tools}
-                        </Typography>
-                    </CardContent>
                 </CardActionArea>
                 <CardActions>
                     <Grid
