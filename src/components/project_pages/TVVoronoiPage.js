@@ -27,7 +27,7 @@ function TVVoronoiPage(){
                     <br/><br/>
                     In the visualization, television shows are represented as dots, and their proximities
                     indicate similarity of user preference. However dimensionality reduction is imperfect and results in information loss.
-                    The coloration is a VoronoiGraph diagram which shows the correlations between shows. Shows which are greener have more
+                    The coloration is a Voronoi diagram which shows the correlations between shows. Shows which are greener have more
                     similar user preference. Interestingly, this coloration allows us to see where dimensionality reduction has maintained
                     relative relations and where it has disrupted these."
                 />
