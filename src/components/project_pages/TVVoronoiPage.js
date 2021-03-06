@@ -7,7 +7,7 @@ function TVVoronoiPage(){
         <div className="container">
             <div className="project-detail align-items-center">
                 <ProjectVisualizationMaster
-                    title="VoronoiGraph Diagram"
+                    title="Voronoi Diagram"
                     next_page="/facial_recog"
                     prev_page="/forest_image"
                     tools="React & D3.js"
