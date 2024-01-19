@@ -65,6 +65,10 @@ const Navigation = () => {
                     window.open('https://chrome.google.com/webstore/detail/multi-inbox-checker/ogogkkmiieflnmchmndkknkjpgipldni?hl=en','_blank');
                     return <Redirect to='/projects' />;
                 }}/>
+                <Route path='/StockStreamer' component={() => {
+                    window.open('https://github.com/tom-shanahan/StockStreamer-Streaming-Data-Pipeline','_blank');
+                    return <Redirect to='/projects' />;
+                }}/>
             </Switch>
         </div>
     );

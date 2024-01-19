@@ -1,17 +1,17 @@
 import React from "react";
 import ProjectDescriptionMaster from "../ProjectDescriptionMaster";
 
-function TripOrigin(){
+function StockStreamer(){
     return (
         <div className="container">
             <div className="project-detail align-items-center">
                 <ProjectDescriptionMaster
                     // style = {{display: 'flex',  justifyContent:'center', alignItems:'center'}}
-                    title="Geodata Analysis: Calculating Trip Counts"
-                    next_page="forest_image"
-                    prev_page="StockStreamer"
-                    tools="Python, Pandas, & Geopandas"
-                    html_location="/trip_origin.html"
+                    title="StockStreamer: Streaming Data Pipeline"
+                    next_page="trip_origin"
+                    prev_page="recommendation_engine"
+                    tools="Python, Spark, Kafka, Cassandra, Grafana, & Docker"
+                    html_location="/StockStreamer.html"
                     description=""
                 />
 
@@ -19,4 +19,4 @@ function TripOrigin(){
         </div>
     );
 }
-export default TripOrigin;
+export default StockStreamer;

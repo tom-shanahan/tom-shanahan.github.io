@@ -17,7 +17,7 @@ function HomePage(){
                         <div className="banner_content">
                             <h3>Welcome!</h3>
                             <h1 className="text-uppercase">I'm Tom Shanahan</h1>
-                            <h5 className="text-uppercase">Tech Enthusiast, Data Nerd, Software Engineer</h5>
+                            <h5 className="text-uppercase">Data & CS</h5>
                             <div className="s_icons my-5">
                                 <a href="https://www.linkedin.com/in/tshanahan1/" target='_blank' rel='noopener noreferrer'><i className="ti-linkedin"></i></a>
                                 <a href="https://github.com/tom-shanahan" target='_blank' rel='noopener noreferrer'><i className="ti-github"></i></a>

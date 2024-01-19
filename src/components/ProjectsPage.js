@@ -25,6 +25,20 @@ function ProjectsPage(){
                         alignItems="stretch"
                         spacing={3}
                     >
+                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <ProjectCard
+                                title="StockStreamer: Streaming Data Pipeline"
+                                project_page="StockStreamer"
+                                img='/images/StockStreamer.png'
+                                tools="Python, Spark, Kafka, Cassandra, Grafana, & Docker"
+                                code_link="None"
+                                data_link="None"
+                                shortDescription="
+                                The Stock Price – Reddit Sentiment Data Pipeline is a streaming data pipeline that 
+                                collects and processes data from the Finnhub.io and Reddit APIs. 
+                                "
+                            />
+                        </Grid>
                         <Grid item xs className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <ProjectCard
                                 title="Geodata Analysis: Calculating Trip Counts"
