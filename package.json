@@ -47,7 +47,7 @@
     "react-gist": "^1.2.2",
     "react-mdl": "^2.1.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^4.0.0",
+    "react-scripts": "^5.0.0",
     "scss-tokenizer": "0.4.3",
     "shell-quote": "1.7.3",
     "source-map-explorer": "^2.5.0",
@@ -93,10 +93,10 @@
     "autoprefixer": "^10.0.1",
     "css-loader": "^5.0.0",
     "node-sass": "^5.0.0",
-    "postcss-loader": "^4.0.4",
+    "postcss-loader": "~7.0.0",
     "react-iframe": "^1.8.0",
     "sass-loader": "^10.0.4",
     "style-loader": "^2.0.0",
-    "webpack-cli": "4"
+    "webpack-cli": "5"
   }
 }
