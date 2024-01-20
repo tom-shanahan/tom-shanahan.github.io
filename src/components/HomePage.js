@@ -23,7 +23,7 @@ function HomePage(){
                                 <a href="https://github.com/tom-shanahan" target='_blank' rel='noopener noreferrer'><i className="ti-github"></i></a>
                             </div>
                             <Link className='link-button' to='/projects'><span>See My Work</span></Link>
-                            <a className="link-button" href="https://drive.google.com/file/d/17fyHKjfr3zuP1BY33Lg3P2mpnJqSOxAw/view?usp=sharing" target="_blank" rel='noopener noreferrer'><span>See My Resume</span></a>
+                            <a className="link-button" href="https://drive.google.com/file/d/1AD-LhSyomdwrC-UAHlEM0rdd3scY1PmZ/view?usp=sharing" target="_blank" rel='noopener noreferrer'><span>See My Resume</span></a>
                         </div>
                     </div>
                     <div className="col-lg-4">
